@@ -1,21 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-
-enum EqType {
-  NONE,
-  ANY,
-  LINEAR,
-  SQUARE,
-  FULL_SQUARE,
-  D_NEGATIVE
-};
-
-struct SqEquation {
-  double a, b, c;
-  double D;
-  double x1, x2;
-  EqType type;
-};
+#include "SqEquation.h"
 
 void checkDis(SqEquation *eq) {
   if (eq->type == SQUARE) {
@@ -87,17 +72,4 @@ void printEqRes(SqEquation *eq) {
     printf("Result: x=%lg (Full square)\n", eq->x1);
   else if (eq->type == D_NEGATIVE)
     printf("Result: None (D < 0)\n");
-}
-
-int main() {
-  SqEquation eq {0};
-
-  if (readEq(&eq)) {
-    solveEq(&eq);
-    printEqRes(&eq);
-  } else {
-    printf("Error: invalid input data\n");
-  }
-
-  return 0;
 }

@@ -1,8 +1,10 @@
-all: sq.cpp
+cpp_files := main.cpp SqEquation.cpp
+
+all:
 	make compile
 	make run
-compile: sq.cpp
-	g++ -std=c++11 sq.cpp -o build/sq -Wall
-run:
+compile: $(cpp_files) 
 	clear
-	build/sq
+	g++ -std=c++11 $(cpp_files) -o build/SquareSolver -Wall
+run:
+	build/SquareSolver
