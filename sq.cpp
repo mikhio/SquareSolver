@@ -1,36 +1,103 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+enum EqType {
+  NONE,
+  ANY,
+  LINEAR,
+  SQUARE,
+  FULL_SQUARE,
+  D_NEGATIVE
+};
+
+struct SqEquation {
   double a, b, c;
+  double D;
+  double x1, x2;
+  EqType type;
+};
+
+void checkDis(SqEquation *eq) {
+  if (eq->type == SQUARE) {
+    eq->D = eq->b*eq->b - 4*eq->a*eq->c;
+    
+    if (eq->D < 0) 
+      eq->type = D_NEGATIVE;
+    if (eq->D == 0)
+      eq->type = FULL_SQUARE;
+  }
+}
+
+void defineType(SqEquation *eq) {
+  eq->type = NONE;
+
+  if ((eq->a == 0) && (eq->b == 0))
+    eq->type = ANY;
+  if ((eq->a == 0) && (eq->b != 0))
+    eq->type = LINEAR;
+  if (eq->a != 0) {
+    eq->type = SQUARE;
+    checkDis(eq);
+  }
+}
+
+bool readEq(SqEquation *eq) {
+  double a = 0, b = 0, c = 0;
+
   printf("Enter a b c: ");
   int args = scanf("%lg %lg %lg", &a, &b, &c);
 
   if (args == 3) {
-    if (a == 0) {
-      if (b == 0) {
-        printf("Result: Any\n");
-      } else {
-        double x = -c/b;
-        printf("Result: x=%lg (Linear)\n", x);
-      }
-    } else {
-      double D = b*b - 4*a*c;
-      if (D >= 0) {
-        double x1 = (-b + sqrt(D))/(2*a);
-        double x2 = (-b - sqrt(D))/(2*a);
+    eq->a = a;
+    eq->b = b;
+    eq->c = c;
 
-        if (D == 0) {
-          printf("Result: x=%lg (Full square)\n", x1);
-        } else {
-          printf("Result: x1=%lg x2=%lg\n", x1, x2);
-        }
-      } else {
-        printf("Result: None (D < 0)\n");
-      }
-    }
+    defineType(eq);
+
+    return true;
+  }
+  return false;
+}
+
+void calcRoots(SqEquation *eq) {
+  double D_sqrt = sqrt(eq->D);
+
+  eq->x1 = (-eq->b + D_sqrt) / eq->a;
+  eq->x2 = (-eq->b - D_sqrt) / eq->a;
+}
+
+void solveEq(SqEquation *eq) {
+  if (eq->type == LINEAR)
+    eq->x1 = eq->x2 = -eq->c/eq->b;
+  else if ((eq->type == SQUARE) || (eq->type == FULL_SQUARE)) {
+    calcRoots(eq);
+  }
+}
+
+void printEqRes(SqEquation *eq) {
+  if (eq->type == NONE)
+    printf("Error: Unknown type\n");
+  else if (eq->type == ANY)
+    printf("Result: Any\n");
+  else if (eq->type == LINEAR)
+    printf("Result: x=%lg (Linear)\n", eq->x1);
+  else if (eq->type == SQUARE)
+    printf("Result: x1=%lg x2=%lg\n", eq->x1, eq->x2);
+  else if (eq->type == FULL_SQUARE)
+    printf("Result: x=%lg (Full square)\n", eq->x1);
+  else if (eq->type == D_NEGATIVE)
+    printf("Result: None (D < 0)\n");
+}
+
+int main() {
+  SqEquation eq {0};
+
+  if (readEq(&eq)) {
+    solveEq(&eq);
+    printEqRes(&eq);
   } else {
     printf("Error: invalid input data\n");
   }
+
   return 0;
 }
