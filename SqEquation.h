@@ -6,6 +6,8 @@
 #define EPSILON 0.00000001
 #define IS_EQUAL(a, b) (fabs(a - b) < EPSILON)
 
+#define CHECK_NULL(ptr, func_name) if (ptr == NULL) { printf("\nERROR: got NULL arg in %s\n", func_name); exit(1); }
+
 enum EqType {
   NONE        = 0,
   ANY         = 1,

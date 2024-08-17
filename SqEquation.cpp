@@ -2,8 +2,6 @@
 #include <math.h>
 #include "SqEquation.h"
 
-#define CHECK_NULL(ptr, func_name) if (ptr == NULL) { printf("\nERROR: got NULL arg in %s\n", func_name); exit(1); }
-
 void checkDis(SqEquation *eq) {
   CHECK_NULL(eq, "checkDis");
 
