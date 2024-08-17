@@ -25,11 +25,9 @@ struct SqEquation {
 
 int checkDis   (SqEquation *eq);
 int defineType (SqEquation *eq);
-int readEq     (SqEquation *eq);
 int calcSquare (SqEquation *eq);
 int calcLinear (SqEquation *eq);
 int solveEq    (SqEquation *eq);
 
-int printEqRes (const SqEquation *eq);
 
 #endif // SQ_EQUATION_H
