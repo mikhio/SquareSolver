@@ -2,11 +2,11 @@
 #include <string.h>
 #include "SqEquation.h"
 
-#define MAX_ATTEMPTS 10
-#define BUFF_SIZE    20
+const int MAX_ATTEMPTS = 10;
+const int BUFF_SIZE = 20;
 
 bool check_quit() {
-  char buffer[BUFF_SIZE];
+  char buffer[BUFF_SIZE] = {};
   fgets(buffer, BUFF_SIZE, stdin);
 
   if (strcmp(buffer, "quit\n") == 0)
@@ -32,11 +32,9 @@ int main() {
       if (check_quit()) 
         return 0;
 
-      printf("ERROR: invalid input data, ATTEMPT %d from %d\n", ++attempts, MAX_ATTEMPTS);
+      fprintf(stderr, "ERROR: invalid input data, ATTEMPT %d from %d\n", ++attempts, MAX_ATTEMPTS);
     }
   }
-
-
 
   return 0;
 }

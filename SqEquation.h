@@ -3,10 +3,9 @@
 
 #include <math.h>
 
-#define EPSILON 0.00000001
+const double EPSILON = 1e-8;
 #define IS_EQUAL(a, b) (fabs(a - b) < EPSILON)
 
-#define CHECK_NULL(ptr, func_name) if (ptr == NULL) { printf("\nERROR: got NULL arg in %s\n", func_name); exit(1); }
 
 enum EqType {
   NONE        = 0,
@@ -24,11 +23,13 @@ struct SqEquation {
   EqType type;
 };
 
-void checkDis(SqEquation *eq);
-void defineType(SqEquation *eq);
-bool readEq(SqEquation *eq);
-void calcRoots(SqEquation *eq);
-void solveEq(SqEquation *eq);
-void printEqRes(SqEquation *eq);
+int checkDis   (SqEquation *eq);
+int defineType (SqEquation *eq);
+int readEq     (SqEquation *eq);
+int calcSquare (SqEquation *eq);
+int calcLinear (SqEquation *eq);
+int solveEq    (SqEquation *eq);
 
-#endif
+int printEqRes (const SqEquation *eq);
+
+#endif // SQ_EQUATION_H

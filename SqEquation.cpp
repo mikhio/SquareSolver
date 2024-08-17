@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <math.h>
+#include <assert.h>
 #include "SqEquation.h"
 
-void checkDis(SqEquation *eq) {
-  CHECK_NULL(eq, "checkDis");
+int checkDis(SqEquation *eq) {
+  assert(eq != NULL);
 
   if (eq->type == SQUARE) {
     eq->D = eq->b*eq->b - 4*eq->a*eq->c;
@@ -13,10 +14,12 @@ void checkDis(SqEquation *eq) {
     else if (IS_EQUAL(eq->D, 0))
       eq->type = FULL_SQUARE;
   }
+
+  return 0;
 }
 
-void defineType(SqEquation *eq) {
-  CHECK_NULL(eq, "defineType");
+int defineType(SqEquation *eq) {
+  assert(eq != NULL);
 
   eq->type = NONE;
 
@@ -28,10 +31,13 @@ void defineType(SqEquation *eq) {
     eq->type = SQUARE;
     checkDis(eq);
   }
+
+  return 0;
 }
 
-bool readEq(SqEquation *eq) {
-  CHECK_NULL(eq, "readEq")
+int readEq(SqEquation *eq) {
+  assert(eq != NULL);
+
   double a = 0, b = 0, c = 0;
 
   int args = scanf("%lg %lg %lg", &a, &b, &c);
@@ -43,51 +49,67 @@ bool readEq(SqEquation *eq) {
 
     defineType(eq);
 
-    return true;
+    return 1;
   }
-  return false;
+
+  return 0;
 }
 
-void calcRoots(SqEquation *eq) {
-  CHECK_NULL(eq, "calcRoots");
+int calcSquare(SqEquation *eq) {
+  assert(eq != NULL);
 
   double D_sqrt = sqrt(eq->D);
 
   eq->x1 = (-eq->b + D_sqrt) / (2*eq->a);
   eq->x2 = (-eq->b - D_sqrt) / (2*eq->a);
+
+  return 0;
 }
 
-void solveEq(SqEquation *eq) {
-  CHECK_NULL(eq, "solveEq");
+int calcLinear(SqEquation *eq) {
+  assert(eq != NULL);
+
+  eq->x1 = eq->x2 = -eq->c/eq->b;
+  return 0;
+}
+
+int solveEq(SqEquation *eq) {
+  assert(eq != NULL);
 
   if (eq->type == LINEAR)
-    eq->x1 = eq->x2 = -eq->c/eq->b;
+    calcLinear(eq);
   else if ((eq->type == SQUARE) || (eq->type == FULL_SQUARE)) {
-    calcRoots(eq);
+    calcSquare(eq);
   }
+
+  return 0;
 }
 
-void printEqRes(SqEquation *eq) {
-  CHECK_NULL(eq, "printEqRes");
+int printEqRes(const SqEquation *eq) {
+  assert(eq != NULL);
 
   switch (eq->type) {
     case NONE:
-      printf("Error: Unknown type\n");
+      printf("Result: NONE type\n");
       break;
     case ANY:
       printf("Result: Any\n");
       break;
     case LINEAR:
-      printf("Result: x=%lg (Linear)\n", eq->x1);
+      printf("Result: x=%.4lg (Linear)\n", eq->x1);
       break;
     case SQUARE:
-      printf("Result: x1=%lg x2=%lg\n", eq->x1, eq->x2);
+      printf("Result: x1=%.4lg x2=%.4lg\n", eq->x1, eq->x2);
       break;
     case FULL_SQUARE:
-      printf("Result: x=%lg (Full square)\n", eq->x1);
+      printf("Result: x=%.4lg (Full square)\n", eq->x1);
       break;
     case D_NEGATIVE:
       printf("Result: None (D < 0)\n");
       break;
+    default:
+      fprintf(stderr, "ERORR: Unknown type of equation");
   }
+
+  return 0;
 }
