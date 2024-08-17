@@ -2,9 +2,11 @@
 #define SQ_EQUATION_H
 
 #include <math.h>
+#include "ReturnCodes.h"
 
 const double EPSILON = 1e-8;
 #define IS_EQUAL(a, b) (fabs(a - b) < EPSILON)
+
 
 
 enum EqType {
@@ -23,11 +25,11 @@ struct SqEquation {
   EqType type;
 };
 
-int checkDis   (SqEquation *eq);
-int defineType (SqEquation *eq);
-int calcSquare (SqEquation *eq);
-int calcLinear (SqEquation *eq);
-int solveEq    (SqEquation *eq);
+ReturnCode checkDis   (SqEquation *eq);
+ReturnCode defineType (SqEquation *eq);
+ReturnCode calcSquare (SqEquation *eq);
+ReturnCode calcLinear (SqEquation *eq);
+ReturnCode solveEq    (SqEquation *eq);
 
 
 #endif // SQ_EQUATION_H

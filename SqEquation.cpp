@@ -2,8 +2,9 @@
 #include <math.h>
 #include <assert.h>
 #include "SqEquation.h"
+#include "ReturnCodes.h"
 
-int checkDis(SqEquation *eq) {
+ReturnCode checkDis(SqEquation *eq) {
   assert(eq != NULL);
 
   if (eq->type == SQUARE) {
@@ -15,10 +16,10 @@ int checkDis(SqEquation *eq) {
       eq->type = FULL_SQUARE;
   }
 
-  return 0;
+  return OK;
 }
 
-int defineType(SqEquation *eq) {
+ReturnCode defineType(SqEquation *eq) {
   assert(eq != NULL);
 
   eq->type = NONE;
@@ -32,11 +33,11 @@ int defineType(SqEquation *eq) {
     checkDis(eq);
   }
 
-  return 0;
+  return OK;
 }
 
 
-int calcSquare(SqEquation *eq) {
+ReturnCode calcSquare(SqEquation *eq) {
   assert(eq != NULL);
 
   double D_sqrt = sqrt(eq->D);
@@ -44,17 +45,18 @@ int calcSquare(SqEquation *eq) {
   eq->x1 = (-eq->b + D_sqrt) / (2*eq->a);
   eq->x2 = (-eq->b - D_sqrt) / (2*eq->a);
 
-  return 0;
+  return OK;
 }
 
-int calcLinear(SqEquation *eq) {
+ReturnCode calcLinear(SqEquation *eq) {
   assert(eq != NULL);
 
   eq->x1 = eq->x2 = -eq->c/eq->b;
-  return 0;
+
+  return OK;
 }
 
-int solveEq(SqEquation *eq) {
+ReturnCode solveEq(SqEquation *eq) {
   assert(eq != NULL);
 
   if (eq->type == LINEAR)
@@ -63,6 +65,6 @@ int solveEq(SqEquation *eq) {
     calcSquare(eq);
   }
 
-  return 0;
+  return OK;
 }
 

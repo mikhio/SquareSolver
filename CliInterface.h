@@ -2,6 +2,7 @@
 #define CLI_INTERFACE_H
 
 #include "SqEquation.h"
+#include "ReturnCodes.h"
 
 const int DEF_MAX_ATTEMPTS = 10;
 
@@ -16,8 +17,8 @@ struct CliInterface {
   int max_attempts;
 };
 
-int ci_run   (const CliInterface *ci);
-int run_loop (const CliInterface *ci, SqEquation *eq);
-int run_once (const CliInterface *ci, SqEquation *eq, int with_attempts);
+ReturnCode ci_run   (const CliInterface *ci);
+ReturnCode run_loop (const CliInterface *ci, SqEquation *eq);
+ReturnCode run_once (const CliInterface *ci, SqEquation *eq, int with_attempts);
 
 #endif // CLI_INTERFACE_H

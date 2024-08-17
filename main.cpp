@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "CliInterface.h"
+#include "ReturnCodes.h"
 
 int main() {
   CliInterface ci = {};
@@ -7,8 +8,12 @@ int main() {
   ci.type = LOOP;
   ci.max_attempts = DEF_MAX_ATTEMPTS;
 
-  if (ci_run(&ci) == -1)
-    fprintf(stderr, "ERORR: Can't run CliInterface");
+  ReturnCode runCode = ci_run(&ci);
+
+  if (runCode == QUIT)
+    printf("GoodBye!))))\n");
+  else if (runCode != OK)
+    fprintf(stderr, "ERORR: Can't run CliInterface with code %d\n", runCode);
 
   return 0;
 }

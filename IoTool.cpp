@@ -3,18 +3,19 @@
 #include <assert.h>
 #include "IoTool.h"
 #include "SqEquation.h"
+#include "ReturnCodes.h"
 
-int check_quit() {
+ReturnCode check_quit() {
   char buffer[BUFF_SIZE] = {};
   fgets(buffer, BUFF_SIZE, stdin);
 
   if (strcmp(buffer, "quit\n") == 0)
-    return 1;
+    return QUIT;
 
-  return 0;
+  return OK;
 }
 
-int readEq(SqEquation *eq) {
+ReturnCode readEq(SqEquation *eq) {
   assert(eq != NULL);
 
   double a = 0, b = 0, c = 0;
@@ -29,15 +30,16 @@ int readEq(SqEquation *eq) {
 
     defineType(eq);
 
-    return 1;
-  } else if (check_quit()) {
-    exit(0);
-  }
+    return OK;
+  } 
 
-  return 0;
+  if (check_quit() == QUIT)
+    return QUIT;
+
+  return INVALID_INPUT;
 }
 
-int printEqRes(const SqEquation *eq) {
+ReturnCode printEqRes(const SqEquation *eq) {
   assert(eq != NULL);
 
   switch (eq->type) {
@@ -61,7 +63,8 @@ int printEqRes(const SqEquation *eq) {
       break;
     default:
       fprintf(stderr, "ERORR: Unknown type of equation");
+      return UNKNOWN_EQ_TYPE;
   }
 
-  return 0;
+  return OK;
 }

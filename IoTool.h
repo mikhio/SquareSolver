@@ -2,11 +2,12 @@
 #define IO_TOOL_H
 
 #include "SqEquation.h"
+#include "ReturnCodes.h"
 
 const int BUFF_SIZE = 20;
 
-int check_quit ();
-int readEq     (SqEquation *eq);
-int printEqRes (const SqEquation *eq);
+ReturnCode check_quit ();
+ReturnCode readEq     (SqEquation *eq);
+ReturnCode printEqRes (const SqEquation *eq);
 
 #endif // IO_TOOL_H
