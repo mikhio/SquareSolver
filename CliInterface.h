@@ -17,8 +17,8 @@ struct CliInterface {
   int max_attempts;
 };
 
-ReturnCode ci_run   (const CliInterface *ci);
-ReturnCode run_loop (const CliInterface *ci, SqEquation *eq);
-ReturnCode run_once (const CliInterface *ci, SqEquation *eq, int with_attempts);
+ReturnCode ss_ci_run   (const CliInterface *ci);
+ReturnCode ss_run_loop (const CliInterface *ci, SqEquation *eq);
+ReturnCode ss_run_once (const CliInterface *ci, SqEquation *eq, int with_attempts);
 
 #endif // CLI_INTERFACE_H

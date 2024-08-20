@@ -4,8 +4,8 @@
 #include "SqEquation.h"
 #include "ReturnCodes.h"
 
-ReturnCode checkDis(SqEquation *eq) {
-  assert(eq != NULL);
+ReturnCode calcDiscriminant(SqEquation *eq) {
+  assert(eq);
 
   if (eq->type == SQUARE) {
     eq->D = eq->b*eq->b - 4*eq->a*eq->c;
@@ -14,23 +14,30 @@ ReturnCode checkDis(SqEquation *eq) {
       eq->type = D_NEGATIVE;
     else if (IS_EQUAL(eq->D, 0))
       eq->type = FULL_SQUARE;
+    else 
+      return ERR_D_POSITIVE;
+  } else {
+    return ERR_UNKNOWN_EQ_TYPE;
   }
 
   return OK;
 }
 
 ReturnCode defineType(SqEquation *eq) {
-  assert(eq != NULL);
+  assert(eq);
 
   eq->type = NONE;
 
-  if (IS_EQUAL(eq->a, 0) && IS_EQUAL(eq->b, 0) && IS_EQUAL(eq->c, 0))
-    eq->type = ANY;
-  if (IS_EQUAL(eq->a, 0) && !IS_EQUAL(eq->b, 0))
+  if (IS_EQUAL(eq->a, 0) && IS_EQUAL(eq->b, 0)) {
+    if (IS_EQUAL(eq->c, 0))
+      eq->type = ANY;
+    else
+      eq->type = NO_ROOTS;
+  } else if (IS_EQUAL(eq->a, 0) && !IS_EQUAL(eq->b, 0)) {
     eq->type = LINEAR;
-  if (!IS_EQUAL(eq->a, 0)) {
+  } else if (!IS_EQUAL(eq->a, 0)) {
     eq->type = SQUARE;
-    checkDis(eq);
+    calcDiscriminant(eq);
   }
 
   return OK;
@@ -38,7 +45,7 @@ ReturnCode defineType(SqEquation *eq) {
 
 
 ReturnCode calcSquare(SqEquation *eq) {
-  assert(eq != NULL);
+  assert(eq);
 
   double D_sqrt = sqrt(eq->D);
 
@@ -49,7 +56,7 @@ ReturnCode calcSquare(SqEquation *eq) {
 }
 
 ReturnCode calcLinear(SqEquation *eq) {
-  assert(eq != NULL);
+  assert(eq);
 
   eq->x1 = eq->x2 = -eq->c/eq->b;
 
@@ -57,13 +64,14 @@ ReturnCode calcLinear(SqEquation *eq) {
 }
 
 ReturnCode solveEq(SqEquation *eq) {
-  assert(eq != NULL);
+  assert(eq);
 
   if (eq->type == LINEAR)
     calcLinear(eq);
-  else if ((eq->type == SQUARE) || (eq->type == FULL_SQUARE)) {
+  else if ((eq->type == SQUARE) || (eq->type == FULL_SQUARE))
     calcSquare(eq);
-  }
+  else
+    return ERR_UNKNOWN_EQ_TYPE;
 
   return OK;
 }

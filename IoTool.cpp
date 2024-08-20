@@ -16,7 +16,7 @@ ReturnCode check_quit() {
 }
 
 ReturnCode readEq(SqEquation *eq) {
-  assert(eq != NULL);
+  assert(eq);
 
   double a = 0, b = 0, c = 0;
 
@@ -42,14 +42,14 @@ ReturnCode readEq(SqEquation *eq) {
 
   fflush(stdin);
 
-  return INVALID_INPUT;
+  return ERR_INVALID_INPUT;
 }
 
 ReturnCode printEqRes(const SqEquation *eq) {
-  assert(eq != NULL);
+  assert(eq);
 
   switch (eq->type) {
-    case NONE:
+    case NO_ROOTS:
       printf("Result: No roots\n");
       break;
     case ANY:
@@ -67,9 +67,12 @@ ReturnCode printEqRes(const SqEquation *eq) {
     case D_NEGATIVE:
       printf("Result: None (D < 0)\n");
       break;
+    case NONE:
+      printf("Warrning: Equation is undefined");
+      break;
     default:
       fprintf(stderr, "ERORR: Unknown type of equation");
-      return UNKNOWN_EQ_TYPE;
+      return ERR_UNKNOWN_EQ_TYPE;
   }
 
   return OK;
