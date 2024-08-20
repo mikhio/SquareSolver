@@ -24,6 +24,10 @@ ReturnCode readEq(SqEquation *eq) {
   int args = scanf("%lg %lg %lg", &a, &b, &c);
 
   if (args == 3) {
+    assert(isfinite(a));
+    assert(isfinite(b));
+    assert(isfinite(c));
+
     eq->a = a;
     eq->b = b;
     eq->c = c;
@@ -36,6 +40,8 @@ ReturnCode readEq(SqEquation *eq) {
   if (check_quit() == QUIT)
     return QUIT;
 
+  fflush(stdin);
+
   return INVALID_INPUT;
 }
 
@@ -44,7 +50,7 @@ ReturnCode printEqRes(const SqEquation *eq) {
 
   switch (eq->type) {
     case NONE:
-      printf("Result: NONE type\n");
+      printf("Result: No roots\n");
       break;
     case ANY:
       printf("Result: Any\n");

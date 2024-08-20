@@ -24,7 +24,7 @@ ReturnCode defineType(SqEquation *eq) {
 
   eq->type = NONE;
 
-  if (IS_EQUAL(eq->a, 0) && IS_EQUAL(eq->b, 0))
+  if (IS_EQUAL(eq->a, 0) && IS_EQUAL(eq->b, 0) && IS_EQUAL(eq->c, 0))
     eq->type = ANY;
   if (IS_EQUAL(eq->a, 0) && !IS_EQUAL(eq->b, 0))
     eq->type = LINEAR;
