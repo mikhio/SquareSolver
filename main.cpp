@@ -7,7 +7,6 @@ int main(int argc, char **argv) {
 
   ReturnCode runCode = ss_ci_run(&ci);
 
-
   if (runCode == QUIT)
     printf("GoodBye!))))\n");
   else if (runCode != OK)

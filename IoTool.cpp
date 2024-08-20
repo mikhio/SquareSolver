@@ -9,7 +9,7 @@ ReturnCode check_quit() {
   char buffer[BUFF_SIZE] = {};
   fgets(buffer, BUFF_SIZE, stdin);
 
-  if (strcmp(buffer, "quit\n") == 0)
+  if ((strcmp(buffer, "quit\n") == 0) || (strcmp(buffer, "q\n") == 0))
     return QUIT;
 
   return OK;
@@ -20,7 +20,7 @@ ReturnCode readEq(SqEquation *eq) {
 
   double a = 0, b = 0, c = 0;
 
-  printf("Enter a b c or quit: ");
+  printf("Enter a b c (or q to quit: ");
   int args = scanf("%lg %lg %lg", &a, &b, &c);
 
   if (args == 3) {
