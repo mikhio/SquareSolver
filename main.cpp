@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
   ReturnCode handlerCode = handleProgramArgs(&ci, argc, argv);
 
   if (handlerCode == ERR_UNKNOWN_ARG) {
-    fprintf(stderr, "ERROR: Unknown flags\n");
+    fprintf(stderr, "ERROR: Unknown flags, run: SquareSolver --help\n");
     return 1;
   } else if (handlerCode == OK) { 
     ReturnCode runCode = ss_ci_run(&ci);

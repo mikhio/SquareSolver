@@ -78,12 +78,28 @@ ReturnCode printEqRes(const SqEquation *eq) {
   return OK;
 }
 
-ReturnCode printHelp() {
+ReturnCode printShortHelp() {
   printf("usage: SquareSolver [-o | --once_without_attempts] [-ow | --once_with_attempts]\n"
          "                    [-l | --loop] [-h | --help]\n"
          "\n"
          "Default mode: LOOP\n"
-         "For more information about program modes, check man (will be soon)\n"
+         "For more information run: SquareSolver --help \n"
+  );
+
+  return OK;
+}
+
+ReturnCode printLongHelp() {
+  printf("usage: SquareSolver [-o | --once_without_attempts] [-ow | --once_with_attempts]\n"
+         "                    [-l | --loop] [-h | --help]\n"
+         "\n"
+         "Default mode: LOOP\n"
+         "\n"
+         "About modes:\n"
+         "  User modes:\n"
+         "* LOOP - running with infinite loop, that can be stopped with quit command or after reaching MAX_ATTEMPTS(deault:10) invalid inputs in row\n"
+         "* ONCE_WITHOUT_ATTEMPTS - running once and after quit automatically always\n"
+         "* ONCE_WITH_ATTEMPTS - running also once, but with invalid input attemps like in loop\n"
   );
 
   return OK;

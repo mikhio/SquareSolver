@@ -8,6 +8,7 @@
 ReturnCode handleProgramArgs(CliInterface *ci, int argc, char **argv) {
   assert(ci);
   assert(argv);
+  assert(argc > 0);
 
   if (argc == 1)
     return OK;
@@ -19,8 +20,11 @@ ReturnCode handleProgramArgs(CliInterface *ci, int argc, char **argv) {
       ci->type = ONCE_WITH_ATTEMPTS;
     } else if (strcmp(argv[i], "-l") == 0 || strcmp(argv[i], "--loop") == 0) {
       ci->type = ONCE_WITH_ATTEMPTS;
-    } else if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
-      printHelp();
+    } else if (strcmp(argv[i], "-h") == 0) {
+      printShortHelp();
+      return QUIT;
+    } else if (strcmp(argv[i], "--help") == 0) {
+      printLongHelp();
       return QUIT;
     } else {
       return ERR_UNKNOWN_ARG;
