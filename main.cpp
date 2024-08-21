@@ -2,6 +2,7 @@
 #include "CliInterface.h"
 #include "ReturnCodes.h"
 #include "CliArgsHandler.h"
+#include "CliColors.h"
 
 int main(int argc, char **argv) {
   CliInterface ci = {SELF_TESTING, DEF_MAX_ATTEMPTS};
@@ -9,7 +10,7 @@ int main(int argc, char **argv) {
   ReturnCode handlerCode = handleProgramArgs(&ci, argc, argv);
 
   if (handlerCode == ERR_UNKNOWN_ARG) {
-    fprintf(stderr, "ERROR: Unknown flags, run: SquareSolver --help\n");
+    fprintf(stderr, RED("ERROR") ": Unknown flags, run: SquareSolver --help\n");
     return 1;
   } else if (handlerCode == OK) { 
     ReturnCode runCode = ss_ci_run(&ci);
@@ -17,7 +18,7 @@ int main(int argc, char **argv) {
     if (runCode == QUIT)
       printf("GoodBye!))))\n");
     else if (runCode != OK)
-      fprintf(stderr, "ERORR: CliInterface crashed with code %d\n", runCode);
+      fprintf(stderr, RED("ERORR") ": CliInterface crashed with code %d\n", runCode);
   }
 
 

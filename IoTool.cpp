@@ -4,6 +4,7 @@
 #include "IoTool.h"
 #include "SqEquation.h"
 #include "ReturnCodes.h"
+#include "CliColors.h"
 
 ReturnCode check_quit() {
   char buffer[BUFF_SIZE] = {};
@@ -66,10 +67,10 @@ ReturnCode printEqRes(const SqEquation *eq) {
       printf("Result: None (D < 0)\n");
       break;
     case NONE:
-      printf("Warrning: Equation is undefined");
+      printf(MAGENTA("Warrning") ": Equation is undefined");
       break;
     default:
-      fprintf(stderr, "ERORR: Unknown type of equation");
+      fprintf(stderr, RED("ERORR") ": Unknown type of equation");
       return ERR_UNKNOWN_EQ_TYPE;
   }
 
@@ -106,8 +107,8 @@ ReturnCode printLongHelp() {
 ReturnCode printWrongTestSS(const SqEquation *test_eq, const SqEquation *expected_eq) {
   assert(test_eq != expected_eq);
   printf(
-    "EXPECTED: a=%.4lg, b=%.4lg, c=%.4lg, type=%d, x1=%.4lg, x2=%.4lg\n"
-    "GOT:      a=%.4lg, b=%.4lg, c=%.4lg, type=%d, x1=%.4lg, x2=%.4lg\n",
+    MAGENTA("EXPECTED") ": a=%.4lg, b=%.4lg, c=%.4lg, type=%d, x1=%.4lg, x2=%.4lg\n"
+    MAGENTA("GOT") ":      a=%.4lg, b=%.4lg, c=%.4lg, type=%d, x1=%.4lg, x2=%.4lg\n",
     expected_eq->a, expected_eq->b, expected_eq->c, expected_eq->type, expected_eq->x1, expected_eq->x2,
     test_eq->a, test_eq->b, test_eq->c, test_eq->type, test_eq->x1, test_eq->x2
   );

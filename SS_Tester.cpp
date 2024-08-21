@@ -4,6 +4,7 @@
 #include "ReturnCodes.h"
 #include "SqEquation.h"
 #include "IoTool.h"
+#include "CliColors.h"
 
 ReturnCode ss_run_tests() {
   printf("Run tests:\n");
@@ -12,9 +13,9 @@ ReturnCode ss_run_tests() {
 
   for (int i = 0; i < TESTS_AMOUNT; i++) {
     if (ss_run_test(i, &test_eq) == OK) {
-      printf("Test %d is OK\n", i+1);
+      printf("Test %d is " GREEN("OK") "\n", i+1);
     } else {
-      printf("Test %d is WRONG\n", i+1);
+      printf("Test %d is " RED("WRONG") "\n", i+1);
       printWrongTestSS(&test_eq, &SS_TESTS[i]);
 
       return ERR_TEST_WRONG; 

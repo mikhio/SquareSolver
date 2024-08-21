@@ -5,6 +5,7 @@
 #include "SqEquation.h"
 #include "ReturnCodes.h"
 #include "SS_Tester.h"
+#include "CliColors.h"
 
 ReturnCode ss_ci_run(const CliInterface *ci) {
   assert(ci);
@@ -21,7 +22,7 @@ ReturnCode ss_ci_run(const CliInterface *ci) {
     case SELF_TESTING:
       return ss_run_tests();
     default:
-      fprintf(stderr, "ERROR: Uknonw type of CliInterface");
+      fprintf(stderr, RED("ERROR") ": Uknonw type of CliInterface");
       return ERR_UNKNOWN_CI_TYPE;
   }
 }
@@ -54,7 +55,7 @@ ReturnCode ss_run_once(const CliInterface *ci, SqEquation *eq, int with_attempts
     }
 
     if (with_attempts)
-      fprintf(stderr, "ERORR: invalid input data, ATTEMPT %d from %d\n", ++cur_attempt, ci->max_attempts);
+      fprintf(stderr, RED("ERORR") ": invalid input data, ATTEMPT %d from %d\n", ++cur_attempt, ci->max_attempts);
     else
       return ERR_INVALID_INPUT;
   }
