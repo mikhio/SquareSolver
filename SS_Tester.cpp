@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <assert.h>
 #include "SS_Tester.h"
 #include "ReturnCodes.h"
 #include "SqEquation.h"
