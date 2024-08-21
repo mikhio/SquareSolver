@@ -4,7 +4,7 @@
 #include <math.h>
 #include "ReturnCodes.h"
 
-const double EPSILON = 1e-8;
+const double EPSILON = 1e-4;
 #define IS_EQUAL(a, b) (fabs(a - b) < EPSILON)
 
 

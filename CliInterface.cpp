@@ -4,6 +4,7 @@
 #include "IoTool.h"
 #include "SqEquation.h"
 #include "ReturnCodes.h"
+#include "SS_Tester.h"
 
 ReturnCode ss_ci_run(const CliInterface *ci) {
   assert(ci);
@@ -17,6 +18,8 @@ ReturnCode ss_ci_run(const CliInterface *ci) {
       return ss_run_once(ci, &eq, 1);
     case ONCE_WITHOUT_ATTEMPTS:
       return ss_run_once(ci, &eq, 0);
+    case SELF_TESTING:
+      return ss_run_tests();
     default:
       fprintf(stderr, "ERROR: Uknonw type of CliInterface");
       return ERR_UNKNOWN_CI_TYPE;

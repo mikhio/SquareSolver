@@ -32,8 +32,6 @@ ReturnCode readEq(SqEquation *eq) {
     eq->b = b;
     eq->c = c;
 
-    defineType(eq);
-
     return OK;
   } 
 
@@ -100,6 +98,18 @@ ReturnCode printLongHelp() {
          "* LOOP - running with infinite loop, that can be stopped with quit command or after reaching MAX_ATTEMPTS(deault:10) invalid inputs in row\n"
          "* ONCE_WITHOUT_ATTEMPTS - running once and after quit automatically always\n"
          "* ONCE_WITH_ATTEMPTS - running also once, but with invalid input attemps like in loop\n"
+  );
+
+  return OK;
+}
+
+ReturnCode printWrongTestSS(const SqEquation *test_eq, const SqEquation *expected_eq) {
+  assert(test_eq != expected_eq);
+  printf(
+    "EXPECTED: a=%.4lg, b=%.4lg, c=%.4lg, type=%d, x1=%.4lg, x2=%.4lg\n"
+    "GOT:      a=%.4lg, b=%.4lg, c=%.4lg, type=%d, x1=%.4lg, x2=%.4lg\n",
+    expected_eq->a, expected_eq->b, expected_eq->c, expected_eq->type, expected_eq->x1, expected_eq->x2,
+    test_eq->a, test_eq->b, test_eq->c, test_eq->type, test_eq->x1, test_eq->x2
   );
 
   return OK;

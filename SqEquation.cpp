@@ -66,6 +66,8 @@ ReturnCode calcLinear(SqEquation *eq) {
 ReturnCode solveEq(SqEquation *eq) {
   assert(eq);
 
+  defineType(eq);
+
   if (eq->type == LINEAR)
     calcLinear(eq);
   else if ((eq->type == SQUARE) || (eq->type == FULL_SQUARE))

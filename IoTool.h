@@ -11,6 +11,8 @@ ReturnCode check_quit ();
 ReturnCode readEq     (SqEquation *eq);
 ReturnCode printEqRes (const SqEquation *eq);
 
+ReturnCode printWrongTestSS (const SqEquation *test_eq, const SqEquation *expected_eq);
+
 ReturnCode printShortHelp ();
 ReturnCode printLongHelp  ();
 

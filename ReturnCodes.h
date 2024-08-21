@@ -8,7 +8,8 @@ enum ReturnCode {
   ERR_UNKNOWN_CI_TYPE = 4,
   ERR_INVALID_INPUT   = 5,
   ERR_D_POSITIVE      = 6,
-  ERR_UNKNOWN_ARG     = 7
+  ERR_UNKNOWN_ARG     = 7,
+  ERR_TEST_WRONG      = 8,
 };
 
 #endif // RETURN_CODE_H

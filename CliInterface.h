@@ -7,9 +7,10 @@
 const int DEF_MAX_ATTEMPTS = 10;
 
 enum CIType {
-  LOOP                 = 0,
+  LOOP                  = 0,
   ONCE_WITH_ATTEMPTS    = 1,
-  ONCE_WITHOUT_ATTEMPTS = 2
+  ONCE_WITHOUT_ATTEMPTS = 2,
+  SELF_TESTING          = 3
 };
 
 struct CliInterface {
