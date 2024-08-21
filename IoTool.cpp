@@ -20,7 +20,7 @@ ReturnCode readEq(SqEquation *eq) {
 
   double a = 0, b = 0, c = 0;
 
-  printf("Enter a b c (or q to quit: ");
+  printf("Enter a b c (or q to quit): ");
   int args = scanf("%lg %lg %lg", &a, &b, &c);
 
   if (args == 3) {
@@ -74,6 +74,17 @@ ReturnCode printEqRes(const SqEquation *eq) {
       fprintf(stderr, "ERORR: Unknown type of equation");
       return ERR_UNKNOWN_EQ_TYPE;
   }
+
+  return OK;
+}
+
+ReturnCode printHelp() {
+  printf("usage: SquareSolver [-o | --once_without_attempts] [-ow | --once_with_attempts]\n"
+         "                    [-l | --loop] [-h | --help]\n"
+         "\n"
+         "Default mode: LOOP\n"
+         "For more information about program modes, check man (will be soon)\n"
+  );
 
   return OK;
 }
