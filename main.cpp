@@ -3,7 +3,7 @@
 #include "ReturnCodes.h"
 
 int main(int argc, char **argv) {
-  CliInterface ci = {LOOP, DEF_MAX_ATTEMPTS};
+  CliInterface ci = {SELF_TESTING, DEF_MAX_ATTEMPTS};
 
   ReturnCode runCode = ss_ci_run(&ci);
 

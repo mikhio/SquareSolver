@@ -1,5 +1,5 @@
-cpp_files := main.cpp SqEquation.cpp CliInterface.cpp IoTool.cpp
-obj_files := objs/main.o objs/SqEquation.o objs/CliInterface.o objs/IoTool.o
+cpp_files := main.cpp SqEquation.cpp CliInterface.cpp IoTool.cpp SS_Tester.cpp
+obj_files := objs/main.o objs/SqEquation.o objs/CliInterface.o objs/IoTool.o objs/SS_Tester.o
 
 cpp_flags := -D _DEBUG -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ -Waggressive-loop-optimizations \
    -Wc++14-compat -Wmissing-declarations -Wcast-qual -Wchar-subscripts                             \

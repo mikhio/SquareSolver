@@ -20,7 +20,7 @@ ReturnCode readEq(SqEquation *eq) {
 
   double a = 0, b = 0, c = 0;
 
-  printf("Enter a b c (or q to quit: ");
+  printf("Enter a b c (or q to quit): ");
   int args = scanf("%lg %lg %lg", &a, &b, &c);
 
   if (args == 3) {
@@ -31,8 +31,6 @@ ReturnCode readEq(SqEquation *eq) {
     eq->a = a;
     eq->b = b;
     eq->c = c;
-
-    defineType(eq);
 
     return OK;
   } 
@@ -74,6 +72,18 @@ ReturnCode printEqRes(const SqEquation *eq) {
       fprintf(stderr, "ERORR: Unknown type of equation");
       return ERR_UNKNOWN_EQ_TYPE;
   }
+
+  return OK;
+}
+
+ReturnCode printWrongTestSS(const SqEquation *test_eq, const SqEquation *expected_eq) {
+  assert(test_eq != expected_eq);
+  printf(
+    "EXPECTED: a=%.4lg, b=%.4lg, c=%.4lg, type=%d, x1=%.4lg, x2=%.4lg\n"
+    "GOT:      a=%.4lg, b=%.4lg, c=%.4lg, type=%d, x1=%.4lg, x2=%.4lg\n",
+    expected_eq->a, expected_eq->b, expected_eq->c, expected_eq->type, expected_eq->x1, expected_eq->x2,
+    test_eq->a, test_eq->b, test_eq->c, test_eq->type, test_eq->x1, test_eq->x2
+  ); 
 
   return OK;
 }
