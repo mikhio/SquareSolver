@@ -18,4 +18,4 @@ const SqEquation SS_TESTS[TESTS_AMOUNT] = {
 ReturnCode ss_run_tests ();
 ReturnCode ss_run_test  (int test_i, SqEquation *test_eq);
 
-#endif //SS_TESTER_H
+#endif // SS_TESTER_H

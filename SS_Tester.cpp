@@ -24,6 +24,8 @@ ReturnCode ss_run_tests() {
 }
 
 ReturnCode ss_run_test(int test_i, SqEquation *test_eq) {
+  assert(test_eq);
+
   test_eq->a = SS_TESTS[test_i].a;
   test_eq->b = SS_TESTS[test_i].b;
   test_eq->c = SS_TESTS[test_i].c;
