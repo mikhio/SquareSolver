@@ -6,15 +6,6 @@
 #include "ReturnCodes.h"
 #include "CliColors.h"
 
-ReturnCode check_quit() {
-  char buffer[BUFF_SIZE] = {};
-  fgets(buffer, BUFF_SIZE, stdin);
-
-  if ((strcmp(buffer, "quit\n") == 0) || (strcmp(buffer, "q\n") == 0))
-    return QUIT;
-
-  return OK;
-}
 
 ReturnCode readEq(SqEquation *eq) {
   assert(eq);
@@ -25,10 +16,6 @@ ReturnCode readEq(SqEquation *eq) {
   int args = scanf("%lg %lg %lg", &a, &b, &c);
 
   if (args == 3) {
-    assert(isfinite(a));
-    assert(isfinite(b));
-    assert(isfinite(c));
-
     eq->a = a;
     eq->b = b;
     eq->c = c;
@@ -36,12 +23,34 @@ ReturnCode readEq(SqEquation *eq) {
     return OK;
   } 
 
-  if (check_quit() == QUIT)
+  if (checkQuit() == QUIT)
     return QUIT;
 
-  fflush(stdin);
+  clearBuffer();
 
   return ERR_INVALID_INPUT;
+}
+
+ReturnCode clearBuffer() {
+  int c = 0;
+
+  ungetc('\n', stdin);
+
+  do {
+    c = getchar();
+  } while ((c != '\n') && (c != EOF));
+
+  return OK;
+}
+
+ReturnCode checkQuit() {
+  char buffer[BUFF_SIZE] = {};
+  fgets(buffer, BUFF_SIZE, stdin);
+
+  if ((strcmp(buffer, "quit\n") == 0) || (strcmp(buffer, "q\n") == 0))
+    return QUIT;
+
+  return OK;
 }
 
 ReturnCode printEqRes(const SqEquation *eq) {
@@ -79,7 +88,9 @@ ReturnCode printEqRes(const SqEquation *eq) {
 
 ReturnCode printShortHelp() {
   printf("usage: SquareSolver [-o | --once_without_attempts] [-ow | --once_with_attempts]\n"
-         "                    [-l | --loop] [-h | --help]\n"
+         "                    [-l | --loop] [-t | --self_testing] [-h | --help]\n"
+         "\n"
+         "All flags override each other: the last one specified determines the mode\n"
          "\n"
          "Default mode: LOOP\n"
          "For more information run: SquareSolver --help \n"
@@ -90,7 +101,9 @@ ReturnCode printShortHelp() {
 
 ReturnCode printLongHelp() {
   printf("usage: SquareSolver [-o | --once_without_attempts] [-ow | --once_with_attempts]\n"
-         "                    [-l | --loop] [-h | --help]\n"
+         "                    [-l | --loop] [-t | --self_testing] [-h | --help]\n"
+         "\n"
+         "All flags override each other: the last one specified determines the mode\n"
          "\n"
          "Default mode: LOOP\n"
          "\n"
@@ -99,6 +112,8 @@ ReturnCode printLongHelp() {
          "* LOOP - running with infinite loop, that can be stopped with quit command or after reaching MAX_ATTEMPTS(deault:10) invalid inputs in row\n"
          "* ONCE_WITHOUT_ATTEMPTS - running once and after quit automatically always\n"
          "* ONCE_WITH_ATTEMPTS - running also once, but with invalid input attemps like in loop\n"
+         "  Automatic modes:\n"
+         "* SELF_TESTING - run bunch of unit tests for equation solver\n"
   );
 
   return OK;

@@ -4,9 +4,10 @@
 #include "SqEquation.h"
 #include "ReturnCodes.h"
 
-const int BUFF_SIZE = 20;
+const int BUFF_SIZE = 10;
 
-ReturnCode check_quit ();
+ReturnCode checkQuit   ();
+ReturnCode clearBuffer ();
 
 ReturnCode readEq     (SqEquation *eq);
 ReturnCode printEqRes (const SqEquation *eq);

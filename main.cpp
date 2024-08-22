@@ -5,7 +5,7 @@
 #include "CliColors.h"
 
 int main(int argc, char **argv) {
-  CliInterface ci = {SELF_TESTING, DEF_MAX_ATTEMPTS};
+  CliInterface ci = {LOOP, DEF_MAX_ATTEMPTS};
 
   ReturnCode handlerCode = handleProgramArgs(&ci, argc, argv);
 

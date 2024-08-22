@@ -19,7 +19,9 @@ ReturnCode handleProgramArgs(CliInterface *ci, int argc, char **argv) {
     } else if (strcmp(argv[i], "-ow") == 0 || strcmp(argv[i], "--once_with_attempts") == 0) {
       ci->type = ONCE_WITH_ATTEMPTS;
     } else if (strcmp(argv[i], "-l") == 0 || strcmp(argv[i], "--loop") == 0) {
-      ci->type = ONCE_WITH_ATTEMPTS;
+      ci->type = LOOP;
+    } else if (strcmp(argv[i], "-t") == 0 || strcmp(argv[i], "--self_testing") == 0) {
+      ci->type = SELF_TESTING;
     } else if (strcmp(argv[i], "-h") == 0) {
       printShortHelp();
       return QUIT;
