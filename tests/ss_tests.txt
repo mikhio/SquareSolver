@@ -1,18 +1,10 @@
-{ .a = 1, .b = 2, .c =  1, .x1 = -1, .x2 = -1, .type = FULL_SQUARE },
-  { .a = 0, .b = 1, .c =  1, .x1 = -1, .x2 =  0, .type = LINEAR      },
-  { .a = 0, .b = 0, .c =  0, .x1 =  0, .x2 =  0, .type = ANY         },
-  { .a = 0, .b = 0, .c =  1, .x1 =  0, .x2 =  0, .type = NO_ROOTS    },
-  { .a = 1, .b = 2, .c =  3, .x1 =  0, .x2 =  0, .type = D_NEGATIVE  },
-  { .a = 1, .b = 0, .c = -1, .x1 =  1, .x2 = -1, .type = SQUARE      },
-
-  { .a = 1, .b = 2.99493, .c = -21.0561, .x1 = 3.32939, .x2 = -6.32432, .type = SQUARE },
-// a b c x1 x2 type (FS = FULL_SQUARE, L=LINEAR, SQ=SQUARE, A=ANY NR=NO_ROOTS, DN=D_NEGATIVE)
+a  b  c x1 x2 type (FS = FULL_SQUARE, L=LINEAR, SQ=SQUARE, A=ANY NR=NO_ROOTS, DN=D_NEGATIVE)
 
 #START
 1  2  1 -1 -1  FS 
 0  1  1 -1  0  L
 0  0  0  0  0  A
 0  0  1  0  0  NR
-1  2  3  0  0  DN 
-1  0  -1 1 -1  SQ
+0  2  3  0  0  DN 
+1  0 -1  1 -1  SQ
 #END

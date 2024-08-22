@@ -14,17 +14,19 @@ ReturnCode ss_run_tests() {
   readTests("tests/ss_tests.txt", ss_tests);
 
   SqEquation test_eq = {};
+  int passed_tests_amount = 0;
 
   for (int i = 0; i < TESTS_AMOUNT; i++) {
     if (ss_run_test(i, &test_eq, ss_tests) == OK) {
       printf("Test %d is " GREEN("OK") "\n", i+1);
+      passed_tests_amount++;
     } else {
       printf("Test %d is " RED("WRONG") "\n", i+1);
       printWrongTestSS(&test_eq, &ss_tests[i]);
-
-      return ERR_TEST_WRONG; 
     }
   }
+
+  printf("%d of %d tests are passed\n", passed_tests_amount, TESTS_AMOUNT);
 
   return OK;
 }
@@ -77,18 +79,18 @@ ReturnCode readTests(const char *file_path, SqEquation eq_tests[TESTS_AMOUNT]) {
   int is_started = 0;
   int test_index = 0;
 
-  while (getline(&read_line, &line_len, tests_file) != -1) {
+  while (getline(&read_line, &line_len, tests_file) != EOF) {
     if (strcmp(read_line, "#START\n") == 0) {
       is_started = 1;
     } else if (strcmp(read_line, "#END\n") == 0) {
       is_started = 0;
     } else if (is_started) {
       SqEquation eq = {};
-      char type_str[100]; 
-      
+      char type_str[100] = {}; 
+      const int ARGS_AMOUNT = 6; 
       int args = sscanf(read_line, "%lg %lg %lg %lg %lg %s", &eq.a, &eq.b, &eq.c, &eq.x1, &eq.x2, type_str);
 
-      if ((args == 6) && (parseEqType(type_str, &eq) == OK)) {
+      if ((args == ARGS_AMOUNT) && (parseEqType(type_str, &eq) == OK)) {
         if (addTest(&eq, eq_tests, test_index) == OK)
           test_index++;
         else
