@@ -10,6 +10,8 @@ enum ReturnCode {
   ERR_D_POSITIVE      = 6,
   ERR_UNKNOWN_ARG     = 7,
   ERR_TEST_WRONG      = 8,
+  ERR_OPEN_FILE       = 9,
+  ERR_BUF_OVERFLOW    = 10,
 };
 
 #endif // RETURN_CODE_H
