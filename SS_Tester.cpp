@@ -26,7 +26,7 @@ ReturnCode ss_run_tests() {
     }
   }
 
-  printf("%d of %d tests are passed\n", passed_tests_amount, TESTS_AMOUNT);
+  printf("%d  of %d tests are passed\n", passed_tests_amount, TESTS_AMOUNT);
 
   return OK;
 }
