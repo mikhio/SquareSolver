@@ -62,11 +62,11 @@ ReturnCode ss_run_test(int test_i, SqEquation *test_eq, SqEquation ss_tests[TEST
       return OK;
     case LINEAR:
     case FULL_SQUARE:
-      if (IS_EQUAL(test_eq->x1, ss_tests[test_i].x1))
+      if (isEqual(test_eq->x1, ss_tests[test_i].x1))
         return OK;
       return ERR_TEST_WRONG;
     case SQUARE:
-      if (IS_EQUAL(test_eq->x1, ss_tests[test_i].x1) && IS_EQUAL(test_eq->x2, ss_tests[test_i].x2))
+      if (isEqual(test_eq->x1, ss_tests[test_i].x1) && isEqual(test_eq->x2, ss_tests[test_i].x2))
         return OK;
       return ERR_TEST_WRONG;
     case NONE:

@@ -86,7 +86,6 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -102,12 +101,6 @@ $(function(){ initResizable(false); });
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_sq_equation.html">SqEquation</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a79a9e539846012abc7a852b8a447140b" id="r_a79a9e539846012abc7a852b8a447140b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79a9e539846012abc7a852b8a447140b">IS_EQUAL</a>(a,  b)</td></tr>
-<tr class="memdesc:a79a9e539846012abc7a852b8a447140b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macros for comparing doubles.  <br /></td></tr>
-<tr class="separator:a79a9e539846012abc7a852b8a447140b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -126,6 +119,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ad4a57a5b4ab117f68dd9ff9d017d8b4d" id="r_ad4a57a5b4ab117f68dd9ff9d017d8b4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4a57a5b4ab117f68dd9ff9d017d8b4d">isEqual</a> (double a, double b)</td></tr>
+<tr class="memdesc:ad4a57a5b4ab117f68dd9ff9d017d8b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare doubles.  <br /></td></tr>
+<tr class="separator:ad4a57a5b4ab117f68dd9ff9d017d8b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e6ba5a419b5b0f1c2c30acd8f792543" id="r_a8e6ba5a419b5b0f1c2c30acd8f792543"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e6ba5a419b5b0f1c2c30acd8f792543">calcDiscriminant</a> (<a class="el" href="struct_sq_equation.html">SqEquation</a> *eq)</td></tr>
 <tr class="memdesc:a8e6ba5a419b5b0f1c2c30acd8f792543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates discrimminant.  <br /></td></tr>
 <tr class="separator:a8e6ba5a419b5b0f1c2c30acd8f792543"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,32 +145,6 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>EPSILON</b> =
 <tr class="memdesc:a596344e5a2992d2beec43b76a6294de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant for max difference between "equal" doubles. <br /></td></tr>
 <tr class="separator:a596344e5a2992d2beec43b76a6294de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a79a9e539846012abc7a852b8a447140b" name="a79a9e539846012abc7a852b8a447140b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79a9e539846012abc7a852b8a447140b">&#9670;&#160;</a></span>IS_EQUAL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IS_EQUAL</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(fabs(a - b) &lt; <a class="code hl_variable" href="#a596344e5a2992d2beec43b76a6294de0">EPSILON</a>)</div>
-<div class="ttc" id="a_sq_equation_8h_html_a596344e5a2992d2beec43b76a6294de0"><div class="ttname"><a href="#a596344e5a2992d2beec43b76a6294de0">EPSILON</a></div><div class="ttdeci">const double EPSILON</div><div class="ttdoc">Constant for max difference between &quot;equal&quot; doubles.</div><div class="ttdef"><b>Definition</b> SqEquation.h:9</div></div>
-</div><!-- fragment -->
-<p>Macros for comparing doubles. </p>
-
-</div>
-</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a0fdee4b1a06856396684b8359c53b3d8" name="a0fdee4b1a06856396684b8359c53b3d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0fdee4b1a06856396684b8359c53b3d8">&#9670;&#160;</a></span>EqType</h2>
@@ -315,6 +285,37 @@ If D &gt; 0, then eq-&gt;type remains SQUARE </p><dl class="params"><dt>Paramete
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Erorr code (if ok return ReturnCode::OK) </dd></dl>
+
+</div>
+</div>
+<a id="ad4a57a5b4ab117f68dd9ff9d017d8b4d" name="ad4a57a5b4ab117f68dd9ff9d017d8b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4a57a5b4ab117f68dd9ff9d017d8b4d">&#9670;&#160;</a></span>isEqual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int isEqual </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare doubles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>first double </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>second double </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 - equal, 0 - unequal </dd></dl>
 
 </div>
 </div>

@@ -19,6 +19,7 @@ ReturnCode readEq(SqEquation *eq) {
   printf("Enter a b c (or q to quit): ");
   int args = scanf("%lg %lg %lg", &a, &b, &c);
 
+
   if (args == 3) {
     eq->a = a;
     eq->b = b;
@@ -91,10 +92,10 @@ ReturnCode printEqRes(const SqEquation *eq) {
       printf("Result: None (D < 0)\n");
       break;
     case NONE:
-      printf(MAGENTA("Warrning") ": Equation is undefined");
+      printf(MAGENTA("Warrning") ": Equation is undefined\n");
       break;
     default:
-      fprintf(stderr, RED("ERORR") ": Unknown type of equation");
+      fprintf(stderr, RED("ERORR") ": Unknown type of equation\n");
       return ERR_UNKNOWN_EQ_TYPE;
   }
 

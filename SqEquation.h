@@ -8,8 +8,6 @@
 
 const double EPSILON = 1e-4; ///< Constant for max difference between "equal" doubles
 
-#define IS_EQUAL(a, b) (fabs(a - b) < EPSILON) ///< Macros for comparing doubles
-
 /// @enum EqType
 /// Equation type enum
 enum EqType {
@@ -39,6 +37,8 @@ struct SqEquation {
   double x2;   ///< Second root
   EqType type; ///< Type
 };
+
+int isEqual(double a, double b); ///< Compare doubles
 
 ReturnCode calcDiscriminant (SqEquation *eq); ///< Calculates discrimminant
 ReturnCode defineType       (SqEquation *eq); ///< Defines equation type

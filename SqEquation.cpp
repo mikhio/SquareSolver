@@ -21,7 +21,7 @@ ReturnCode calcDiscriminant(SqEquation *eq) {
     
     if (eq->D < 0) 
       eq->type = D_NEGATIVE;
-    else if (IS_EQUAL(eq->D, 0))
+    else if (isEqual(eq->D, 0))
       eq->type = FULL_SQUARE;
     else 
       return ERR_D_POSITIVE;
@@ -42,14 +42,16 @@ ReturnCode defineType(SqEquation *eq) {
 
   eq->type = NONE;
 
-  if (IS_EQUAL(eq->a, 0) && IS_EQUAL(eq->b, 0)) {
-    if (IS_EQUAL(eq->c, 0))
+  if (!isfinite(eq->a) || !isfinite(eq->b) || !isfinite(eq->c)) {
+    eq->type = NO_ROOTS;
+  } else if (isEqual(eq->a, 0) && isEqual(eq->b, 0)) {
+    if (isEqual(eq->c, 0))
       eq->type = ANY;
     else
       eq->type = NO_ROOTS;
-  } else if (IS_EQUAL(eq->a, 0) && !IS_EQUAL(eq->b, 0)) {
+  } else if (isEqual(eq->a, 0) && !isEqual(eq->b, 0)) {
     eq->type = LINEAR;
-  } else if (!IS_EQUAL(eq->a, 0)) {
+  } else if (!isEqual(eq->a, 0)) {
     eq->type = SQUARE;
     calcDiscriminant(eq);
   }
@@ -114,3 +116,19 @@ ReturnCode solveEq(SqEquation *eq) {
   return OK;
 }
 
+/**
+ * @param[in] a first double
+ * @param[in] b second double
+ * @return 1 - equal, 0 - unequal
+ */
+int isEqual(double a, double b) {
+  if ((isnan(a) && isnan(b)) || (isinf(a) && isinf(b)))
+    return 1;
+  if (!isfinite(a) || !isfinite(b))
+    return 0;
+  
+  if (fabs(a - b) < EPSILON)
+    return 1;
+
+  return 0;
+}

@@ -1,5 +1,5 @@
 var searchData=
 [
   ['iotool_2eh_0',['IoTool.h',['../_io_tool_8h.html',1,'']]],
-  ['is_5fequal_1',['IS_EQUAL',['../_sq_equation_8h.html#a79a9e539846012abc7a852b8a447140b',1,'SqEquation.h']]]
+  ['isequal_1',['isEqual',['../_sq_equation_8h.html#ad4a57a5b4ab117f68dd9ff9d017d8b4d',1,'SqEquation.cpp']]]
 ];

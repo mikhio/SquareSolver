@@ -7,11 +7,6 @@
 \item 
 struct \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{_sq_equation_8h_a79a9e539846012abc7a852b8a447140b}{IS\+\_\+\+EQUAL}}(a,  b)
-\begin{DoxyCompactList}\small\item\em Macros for comparing doubles. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,6 +24,8 @@ enum \mbox{\hyperlink{_sq_equation_8h_a0fdee4b1a06856396684b8359c53b3d8}{Eq\+Typ
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+int \mbox{\hyperlink{_sq_equation_8h_ad4a57a5b4ab117f68dd9ff9d017d8b4d}{is\+Equal}} (double a, double b)
+\begin{DoxyCompactList}\small\item\em Compare doubles. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_sq_equation_8h_a8e6ba5a419b5b0f1c2c30acd8f792543}{calc\+Discriminant}} (\mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}eq)
 \begin{DoxyCompactList}\small\item\em Calculates discrimminant. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_sq_equation_8h_ae794844df25efea9501d726f69a791f7}{define\+Type}} (\mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}eq)
@@ -45,24 +42,6 @@ enum \mbox{\hyperlink{_sq_equation_8h_a0fdee4b1a06856396684b8359c53b3d8}{Eq\+Typ
 \Hypertarget{_sq_equation_8h_a596344e5a2992d2beec43b76a6294de0}\label{_sq_equation_8h_a596344e5a2992d2beec43b76a6294de0} 
 const double {\bfseries EPSILON} = 1e-\/4
 \begin{DoxyCompactList}\small\item\em Constant for max difference between "{}equal"{} doubles. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\doxysubsection{Macro Definition Documentation}
-\Hypertarget{_sq_equation_8h_a79a9e539846012abc7a852b8a447140b}\index{SqEquation.h@{SqEquation.h}!IS\_EQUAL@{IS\_EQUAL}}
-\index{IS\_EQUAL@{IS\_EQUAL}!SqEquation.h@{SqEquation.h}}
-\doxysubsubsection{\texorpdfstring{IS\_EQUAL}{IS\_EQUAL}}
-{\footnotesize\ttfamily \label{_sq_equation_8h_a79a9e539846012abc7a852b8a447140b} 
-\#define IS\+\_\+\+EQUAL(\begin{DoxyParamCaption}\item[{}]{a}{, }\item[{}]{b}{}\end{DoxyParamCaption})}
-
-{\bfseries Value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{(fabs(a\ -\/\ b)\ <\ \mbox{\hyperlink{_sq_equation_8h_a596344e5a2992d2beec43b76a6294de0}{EPSILON}})}
-
-\end{DoxyCode}
-
-
-Macros for comparing doubles. 
-
 
 
 \doxysubsection{Enumeration Type Documentation}
@@ -182,6 +161,26 @@ Changes type depends on coefs and amount of roots~\newline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}
+\Hypertarget{_sq_equation_8h_ad4a57a5b4ab117f68dd9ff9d017d8b4d}\index{SqEquation.h@{SqEquation.h}!isEqual@{isEqual}}
+\index{isEqual@{isEqual}!SqEquation.h@{SqEquation.h}}
+\doxysubsubsection{\texorpdfstring{isEqual()}{isEqual()}}
+{\footnotesize\ttfamily \label{_sq_equation_8h_ad4a57a5b4ab117f68dd9ff9d017d8b4d} 
+int is\+Equal (\begin{DoxyParamCaption}\item[{double}]{a}{, }\item[{double}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Compare doubles. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & first double \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & second double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/ equal, 0 -\/ unequal 
 \end{DoxyReturn}
 \Hypertarget{_sq_equation_8h_ae9d667f682ca42b03e3a7d5327d58a49}\index{SqEquation.h@{SqEquation.h}!solveEq@{solveEq}}
 \index{solveEq@{solveEq}!SqEquation.h@{SqEquation.h}}

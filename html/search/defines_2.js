@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['is_5fequal_0',['IS_EQUAL',['../_sq_equation_8h.html#a79a9e539846012abc7a852b8a447140b',1,'SqEquation.h']]]
+  ['magenta_0',['MAGENTA',['../_cli_colors_8h.html#abd7e0b1f7e68443f40e74db26769ea0f',1,'CliColors.h']]]
 ];
