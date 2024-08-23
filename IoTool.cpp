@@ -19,7 +19,6 @@ ReturnCode readEq(SqEquation *eq) {
   printf("Enter a b c (or q to quit): ");
   int args = scanf("%lg %lg %lg", &a, &b, &c);
 
-
   if (args == 3) {
     eq->a = a;
     eq->b = b;
@@ -40,13 +39,10 @@ ReturnCode readEq(SqEquation *eq) {
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode clearBuffer() {
-  int c = 0;
+  fseek(stdin, 0, SEEK_END);
 
-  ungetc('\n', stdin);
-
-  do {
-    c = getchar();
-  } while ((c != '\n') && (c != EOF));
+  if (ftell(stdin) <= 0)
+    return OK;
 
   return OK;
 }
