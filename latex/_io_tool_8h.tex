@@ -1,0 +1,137 @@
+\doxysection{Io\+Tool.\+h File Reference}
+\hypertarget{_io_tool_8h}{}\label{_io_tool_8h}\index{IoTool.h@{IoTool.h}}
+{\ttfamily \#include "{}Sq\+Equation.\+h"{}}\newline
+{\ttfamily \#include "{}Return\+Codes.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_io_tool_8h_adc6a1e12d8af01e15d15dc7c397a6d12}{check\+Quit}} ()
+\begin{DoxyCompactList}\small\item\em Checks entering quit command. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_io_tool_8h_aa73af2bc3c86f0a77e9a37ac4742f4a7}{clear\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Clear stdin buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_io_tool_8h_abbdc1c64f7bbef6ca7ed2f7c7f5b50c7}{read\+Eq}} (\mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}eq)
+\begin{DoxyCompactList}\small\item\em Reads equation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_io_tool_8h_a81279579872721517d633bcd87a66f70}{print\+Eq\+Res}} (const \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}eq)
+\begin{DoxyCompactList}\small\item\em Prints equation result. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_io_tool_8h_ada2f00a8e201dc33eea61fe1e588eda7}{print\+Wrong\+Test\+SS}} (const \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}test\+\_\+eq, const \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}expected\+\_\+eq)
+\item 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_io_tool_8h_ae4a9a1bb909372b74ea08f66df6bdb43}{print\+Short\+Help}} ()
+\begin{DoxyCompactList}\small\item\em Prits wrong test info. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_io_tool_8h_acc9ecc43fa4abfba3a0302bccbfe4665}{print\+Long\+Help}} ()
+\begin{DoxyCompactList}\small\item\em Prints detailed help info. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_io_tool_8h_a5cce71e17a4c09702df4ac4da26c6363}\label{_io_tool_8h_a5cce71e17a4c09702df4ac4da26c6363} 
+const int {\bfseries BUFF\+\_\+\+SIZE} = 10
+\begin{DoxyCompactList}\small\item\em check\+Quit\textquotesingle{}s buffer size \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_io_tool_8h_adc6a1e12d8af01e15d15dc7c397a6d12}\index{IoTool.h@{IoTool.h}!checkQuit@{checkQuit}}
+\index{checkQuit@{checkQuit}!IoTool.h@{IoTool.h}}
+\doxysubsubsection{\texorpdfstring{checkQuit()}{checkQuit()}}
+{\footnotesize\ttfamily \label{_io_tool_8h_adc6a1e12d8af01e15d15dc7c397a6d12} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} check\+Quit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks entering quit command. 
+
+If user entered "{}q"{} or "{}quit"{}, then return Return\+Code\+::\+QUIT~\newline
+\begin{DoxyReturn}{Returns}
+Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}
+\Hypertarget{_io_tool_8h_aa73af2bc3c86f0a77e9a37ac4742f4a7}\index{IoTool.h@{IoTool.h}!clearBuffer@{clearBuffer}}
+\index{clearBuffer@{clearBuffer}!IoTool.h@{IoTool.h}}
+\doxysubsubsection{\texorpdfstring{clearBuffer()}{clearBuffer()}}
+{\footnotesize\ttfamily \label{_io_tool_8h_aa73af2bc3c86f0a77e9a37ac4742f4a7} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} clear\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clear stdin buffer. 
+
+\begin{DoxyReturn}{Returns}
+Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}
+\Hypertarget{_io_tool_8h_a81279579872721517d633bcd87a66f70}\index{IoTool.h@{IoTool.h}!printEqRes@{printEqRes}}
+\index{printEqRes@{printEqRes}!IoTool.h@{IoTool.h}}
+\doxysubsubsection{\texorpdfstring{printEqRes()}{printEqRes()}}
+{\footnotesize\ttfamily \label{_io_tool_8h_a81279579872721517d633bcd87a66f70} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} print\+Eq\+Res (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}}]{eq}{}\end{DoxyParamCaption})}
+
+
+
+Prints equation result. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em eq} & const pointer equation (can\textquotesingle{}t be NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}
+\Hypertarget{_io_tool_8h_acc9ecc43fa4abfba3a0302bccbfe4665}\index{IoTool.h@{IoTool.h}!printLongHelp@{printLongHelp}}
+\index{printLongHelp@{printLongHelp}!IoTool.h@{IoTool.h}}
+\doxysubsubsection{\texorpdfstring{printLongHelp()}{printLongHelp()}}
+{\footnotesize\ttfamily \label{_io_tool_8h_acc9ecc43fa4abfba3a0302bccbfe4665} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} print\+Long\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Prints detailed help info. 
+
+\begin{DoxyReturn}{Returns}
+Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}
+\Hypertarget{_io_tool_8h_ae4a9a1bb909372b74ea08f66df6bdb43}\index{IoTool.h@{IoTool.h}!printShortHelp@{printShortHelp}}
+\index{printShortHelp@{printShortHelp}!IoTool.h@{IoTool.h}}
+\doxysubsubsection{\texorpdfstring{printShortHelp()}{printShortHelp()}}
+{\footnotesize\ttfamily \label{_io_tool_8h_ae4a9a1bb909372b74ea08f66df6bdb43} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} print\+Short\+Help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Prits wrong test info. 
+
+Prints important help info
+
+\begin{DoxyReturn}{Returns}
+Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}
+\Hypertarget{_io_tool_8h_ada2f00a8e201dc33eea61fe1e588eda7}\index{IoTool.h@{IoTool.h}!printWrongTestSS@{printWrongTestSS}}
+\index{printWrongTestSS@{printWrongTestSS}!IoTool.h@{IoTool.h}}
+\doxysubsubsection{\texorpdfstring{printWrongTestSS()}{printWrongTestSS()}}
+{\footnotesize\ttfamily \label{_io_tool_8h_ada2f00a8e201dc33eea61fe1e588eda7} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} print\+Wrong\+Test\+SS (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}}]{test\+\_\+eq}{, }\item[{const \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}}]{expected\+\_\+eq}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em test\+\_\+eq} & pointer to test\textquotesingle{}s equation (can\textquotesingle{}t be NULL) \\
+\hline
+\mbox{\texttt{ in}}  & {\em expected\+\_\+eq} & pointer to expected equation (can\textquotesingle{}t be NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}
+\Hypertarget{_io_tool_8h_abbdc1c64f7bbef6ca7ed2f7c7f5b50c7}\index{IoTool.h@{IoTool.h}!readEq@{readEq}}
+\index{readEq@{readEq}!IoTool.h@{IoTool.h}}
+\doxysubsubsection{\texorpdfstring{readEq()}{readEq()}}
+{\footnotesize\ttfamily \label{_io_tool_8h_abbdc1c64f7bbef6ca7ed2f7c7f5b50c7} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} read\+Eq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}}]{eq}{}\end{DoxyParamCaption})}
+
+
+
+Reads equation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em eq} & pointer equation (can\textquotesingle{}t be NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}

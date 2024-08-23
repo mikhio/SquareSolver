@@ -1,0 +1,30 @@
+\doxysection{Cli\+Interface.\+h}
+\hypertarget{_cli_interface_8h_source}{}\label{_cli_interface_8h_source}\mbox{\hyperlink{_cli_interface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CLI\_INTERFACE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CLI\_INTERFACE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sq_equation_8h}{SqEquation.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_return_codes_8h}{ReturnCodes.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_cli_interface_8h_aa47112465bf2b780de7bdb7650cf1ba2}{DEF\_MAX\_ATTEMPTS}}\ =\ 10;\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddb}{CIType}}\ \{}
+\DoxyCodeLine{00015\ \ \ \mbox{\hyperlink{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddba61f7f1587bd5fe978d9ff3ece8d0624c}{LOOP}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0,\ }
+\DoxyCodeLine{00016\ \ \ \mbox{\hyperlink{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddba07c81e88eaf162ced62c81b95058bec9}{ONCE\_WITH\_ATTEMPTS}}\ \ \ \ =\ 1,\ }
+\DoxyCodeLine{00017\ \ \ \mbox{\hyperlink{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddbae882d6eb4e30aec837d100893a8d738c}{ONCE\_WITHOUT\_ATTEMPTS}}\ =\ 2,\ }
+\DoxyCodeLine{00018\ \ \ \mbox{\hyperlink{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddba82dadbe8e8759a98a7464cd429f30522}{SELF\_TESTING}}\ \ \ \ \ \ \ \ \ \ =\ 3\ \ }
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_cli_interface}{CliInterface}}\ \{}
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddb}{CIType}}\ \mbox{\hyperlink{struct_cli_interface_ac08eecbe7e043ef28e63b238859a600b}{type}};\ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_cli_interface_a1f458422f10fac0d54860c22dd61c45e}{max\_attempts}};\ }
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{ReturnCode}}\ \mbox{\hyperlink{_cli_interface_8h_ac83e6cf772558317a1a4cc7b4ac024c2}{ss\_ci\_run}}\ \ \ (\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_cli_interface}{CliInterface}}\ *ci);\ }
+\DoxyCodeLine{00030\ \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{ReturnCode}}\ \mbox{\hyperlink{_cli_interface_8h_a656c26d022ef21da08a060d2209a492e}{ss\_run\_loop}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_cli_interface}{CliInterface}}\ *ci);\ }
+\DoxyCodeLine{00031\ \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{ReturnCode}}\ \mbox{\hyperlink{_cli_interface_8h_a2c021a7f810f6af0602af8c50d9669b6}{ss\_run\_once}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_cli_interface}{CliInterface}}\ *ci,\ \textcolor{keywordtype}{int}\ with\_attempts);\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CLI\_INTERFACE\_H}}
+
+\end{DoxyCode}

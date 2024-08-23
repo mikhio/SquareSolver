@@ -1,0 +1,119 @@
+\doxysection{Cli\+Interface.\+h File Reference}
+\hypertarget{_cli_interface_8h}{}\label{_cli_interface_8h}\index{CliInterface.h@{CliInterface.h}}
+{\ttfamily \#include "{}Sq\+Equation.\+h"{}}\newline
+{\ttfamily \#include "{}Return\+Codes.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_cli_interface}{Cli\+Interface}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddb}{CIType}} \{ \mbox{\hyperlink{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddba61f7f1587bd5fe978d9ff3ece8d0624c}{LOOP}} = 0
+, \mbox{\hyperlink{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddba07c81e88eaf162ced62c81b95058bec9}{ONCE\+\_\+\+WITH\+\_\+\+ATTEMPTS}} = 1
+, \mbox{\hyperlink{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddbae882d6eb4e30aec837d100893a8d738c}{ONCE\+\_\+\+WITHOUT\+\_\+\+ATTEMPTS}} = 2
+, \mbox{\hyperlink{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddba82dadbe8e8759a98a7464cd429f30522}{SELF\+\_\+\+TESTING}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_cli_interface_8h_ac83e6cf772558317a1a4cc7b4ac024c2}{ss\+\_\+ci\+\_\+run}} (const \mbox{\hyperlink{struct_cli_interface}{Cli\+Interface}} \texorpdfstring{$\ast$}{*}ci)
+\begin{DoxyCompactList}\small\item\em Runs \doxylink{struct_cli_interface}{Cli\+Interface} for Solve\+Square task. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_cli_interface_8h_a656c26d022ef21da08a060d2209a492e}{ss\+\_\+run\+\_\+loop}} (const \mbox{\hyperlink{struct_cli_interface}{Cli\+Interface}} \texorpdfstring{$\ast$}{*}ci)
+\begin{DoxyCompactList}\small\item\em Runs \doxylink{struct_cli_interface}{Cli\+Interface} in loop mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_cli_interface_8h_a2c021a7f810f6af0602af8c50d9669b6}{ss\+\_\+run\+\_\+once}} (const \mbox{\hyperlink{struct_cli_interface}{Cli\+Interface}} \texorpdfstring{$\ast$}{*}ci, int with\+\_\+attempts)
+\begin{DoxyCompactList}\small\item\em Runs \doxylink{struct_cli_interface}{Cli\+Interface} in once modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_cli_interface_8h_aa47112465bf2b780de7bdb7650cf1ba2}\label{_cli_interface_8h_aa47112465bf2b780de7bdb7650cf1ba2} 
+const int {\bfseries DEF\+\_\+\+MAX\+\_\+\+ATTEMPTS} = 10
+\begin{DoxyCompactList}\small\item\em Default max attempts of input coefs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddb}\index{CliInterface.h@{CliInterface.h}!CIType@{CIType}}
+\index{CIType@{CIType}!CliInterface.h@{CliInterface.h}}
+\doxysubsubsection{\texorpdfstring{CIType}{CIType}}
+{\footnotesize\ttfamily \label{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddb} 
+enum \mbox{\hyperlink{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddb}{CIType}}}
+
+Defines mode of usage cli and inclunces to running function \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOOP@{LOOP}!CliInterface.h@{CliInterface.h}}\index{CliInterface.h@{CliInterface.h}!LOOP@{LOOP}}}\Hypertarget{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddba61f7f1587bd5fe978d9ff3ece8d0624c}\label{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddb} 
+LOOP&Loop mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ONCE\_WITH\_ATTEMPTS@{ONCE\_WITH\_ATTEMPTS}!CliInterface.h@{CliInterface.h}}\index{CliInterface.h@{CliInterface.h}!ONCE\_WITH\_ATTEMPTS@{ONCE\_WITH\_ATTEMPTS}}}\Hypertarget{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddba07c81e88eaf162ced62c81b95058bec9}\label{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddb} 
+ONCE\+\_\+\+WITH\+\_\+\+ATTEMPTS&Once with attempts mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ONCE\_WITHOUT\_ATTEMPTS@{ONCE\_WITHOUT\_ATTEMPTS}!CliInterface.h@{CliInterface.h}}\index{CliInterface.h@{CliInterface.h}!ONCE\_WITHOUT\_ATTEMPTS@{ONCE\_WITHOUT\_ATTEMPTS}}}\Hypertarget{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddbae882d6eb4e30aec837d100893a8d738c}\label{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddb} 
+ONCE\+\_\+\+WITHOUT\+\_\+\+ATTEMPTS&Once without attempts mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SELF\_TESTING@{SELF\_TESTING}!CliInterface.h@{CliInterface.h}}\index{CliInterface.h@{CliInterface.h}!SELF\_TESTING@{SELF\_TESTING}}}\Hypertarget{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddba82dadbe8e8759a98a7464cd429f30522}\label{_cli_interface_8h_a3b0e54ca416e648ba720441d43ba6ddb} 
+SELF\+\_\+\+TESTING&Self testing mode. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_cli_interface_8h_ac83e6cf772558317a1a4cc7b4ac024c2}\index{CliInterface.h@{CliInterface.h}!ss\_ci\_run@{ss\_ci\_run}}
+\index{ss\_ci\_run@{ss\_ci\_run}!CliInterface.h@{CliInterface.h}}
+\doxysubsubsection{\texorpdfstring{ss\_ci\_run()}{ss\_ci\_run()}}
+{\footnotesize\ttfamily \label{_cli_interface_8h_ac83e6cf772558317a1a4cc7b4ac024c2} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} ss\+\_\+ci\+\_\+run (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cli_interface}{Cli\+Interface}} \texorpdfstring{$\ast$}{*}}]{ci}{}\end{DoxyParamCaption})}
+
+
+
+Runs \doxylink{struct_cli_interface}{Cli\+Interface} for Solve\+Square task. 
+
+Calls ss\+\_\+run\+\_\+loop() or ss\+\_\+run\+\_\+once() depends on \doxylink{struct_cli_interface}{Cli\+Interface} mode 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ci} & const pointer to interface (can\textquotesingle{}t be NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}
+\Hypertarget{_cli_interface_8h_a656c26d022ef21da08a060d2209a492e}\index{CliInterface.h@{CliInterface.h}!ss\_run\_loop@{ss\_run\_loop}}
+\index{ss\_run\_loop@{ss\_run\_loop}!CliInterface.h@{CliInterface.h}}
+\doxysubsubsection{\texorpdfstring{ss\_run\_loop()}{ss\_run\_loop()}}
+{\footnotesize\ttfamily \label{_cli_interface_8h_a656c26d022ef21da08a060d2209a492e} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} ss\+\_\+run\+\_\+loop (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cli_interface}{Cli\+Interface}} \texorpdfstring{$\ast$}{*}}]{ci}{}\end{DoxyParamCaption})}
+
+
+
+Runs \doxylink{struct_cli_interface}{Cli\+Interface} in loop mode. 
+
+Runs loop with calling run\+\_\+once() untill quiting 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ci} & const pointer to interface (can\textquotesingle{}t be NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}
+\Hypertarget{_cli_interface_8h_a2c021a7f810f6af0602af8c50d9669b6}\index{CliInterface.h@{CliInterface.h}!ss\_run\_once@{ss\_run\_once}}
+\index{ss\_run\_once@{ss\_run\_once}!CliInterface.h@{CliInterface.h}}
+\doxysubsubsection{\texorpdfstring{ss\_run\_once()}{ss\_run\_once()}}
+{\footnotesize\ttfamily \label{_cli_interface_8h_a2c021a7f810f6af0602af8c50d9669b6} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} ss\+\_\+run\+\_\+once (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cli_interface}{Cli\+Interface}} \texorpdfstring{$\ast$}{*}}]{ci}{, }\item[{int}]{with\+\_\+attempts}{}\end{DoxyParamCaption})}
+
+
+
+Runs \doxylink{struct_cli_interface}{Cli\+Interface} in once modes. 
+
+Reads and solves equation once 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ci} & const pointer to interface (can\textquotesingle{}t be NULL) \\
+\hline
+\mbox{\texttt{ in}}  & {\em with\+\_\+attempts} & flag that defines mode\+: 1 -\/ ONCE\+\_\+\+WITH\+\_\+\+ATTEMPTS, 0 -\/ ONCE\+\_\+\+WTIOUT\+\_\+\+ATTEMPTS \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}

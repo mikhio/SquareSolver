@@ -4,6 +4,15 @@
 #include "SqEquation.h"
 #include "ReturnCodes.h"
 
+/**
+ * Needs eq->type to be equal SQUARE\n
+ * Writes D = b^2 - 4ac to eq->D\n
+ * If D < 0, then changes eq->type to D_NEGATIVE\n
+ * If D == 0, then changes eq->type to FULL_SQUARE\n
+ * If D > 0, then eq->type remains SQUARE
+ * @param[in, out] eq pointer to equation (can't be NULL)
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode calcDiscriminant(SqEquation *eq) {
   assert(eq);
 
@@ -23,6 +32,11 @@ ReturnCode calcDiscriminant(SqEquation *eq) {
   return OK;
 }
 
+/**
+ * Changes type depends on coefs and amount of roots\n
+ * @param eq pointer equation (can't be NULL)
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode defineType(SqEquation *eq) {
   assert(eq);
 
@@ -43,26 +57,48 @@ ReturnCode defineType(SqEquation *eq) {
   return OK;
 }
 
-
+/**
+ * Needs eq->type SQUARE or FULL_SQUARE\n
+ * @param eq pointer equation (can't be NULL)
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode calcSquare(SqEquation *eq) {
   assert(eq);
 
-  double D_sqrt = sqrt(eq->D);
-
-  eq->x1 = (-eq->b + D_sqrt) / (2*eq->a);
-  eq->x2 = (-eq->b - D_sqrt) / (2*eq->a);
+  if (eq->type == SQUARE || eq->type == FULL_SQUARE) {
+    double D_sqrt = sqrt(eq->D);
+    
+    eq->x1 = (-eq->b + D_sqrt) / (2*eq->a);
+    eq->x2 = (-eq->b - D_sqrt) / (2*eq->a);
+  } else {
+    return ERR_UNKNOWN_EQ_TYPE;
+  }
 
   return OK;
 }
 
+/**
+ * Needs eq->type LINEAR
+ * @param eq pointer equation (can't be NULL)
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode calcLinear(SqEquation *eq) {
   assert(eq);
-
-  eq->x1 = eq->x2 = -eq->c/eq->b;
+  
+  if (eq->type == LINEAR)
+    eq->x1 = eq->x2 = -eq->c/eq->b;
+  else
+    return ERR_UNKNOWN_EQ_TYPE;
 
   return OK;
 }
 
+/**
+ * Firstly, calls defineType() to define type\n
+ * Secondly, depends on type calls calcSquare() or calcLinear()
+ * @param eq pointer equation (can't be NULL)
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode solveEq(SqEquation *eq) {
   assert(eq);
 

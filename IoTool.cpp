@@ -7,6 +7,10 @@
 #include "CliColors.h"
 
 
+/**
+ * @param[in] eq pointer equation (can't be NULL)
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode readEq(SqEquation *eq) {
   assert(eq);
 
@@ -31,6 +35,9 @@ ReturnCode readEq(SqEquation *eq) {
   return ERR_INVALID_INPUT;
 }
 
+/**
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode clearBuffer() {
   int c = 0;
 
@@ -43,6 +50,10 @@ ReturnCode clearBuffer() {
   return OK;
 }
 
+/**
+ * If user entered "q" or "quit", then return ReturnCode::QUIT\n
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode checkQuit() {
   char buffer[BUFF_SIZE] = {};
   fgets(buffer, BUFF_SIZE, stdin);
@@ -53,6 +64,10 @@ ReturnCode checkQuit() {
   return OK;
 }
 
+/**
+ * @param[in] eq const pointer equation (can't be NULL)
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode printEqRes(const SqEquation *eq) {
   assert(eq);
 
@@ -86,6 +101,9 @@ ReturnCode printEqRes(const SqEquation *eq) {
   return OK;
 }
 
+/**
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode printShortHelp() {
   printf("usage: SquareSolver [-o | --once_without_attempts] [-ow | --once_with_attempts]\n"
          "                    [-l | --loop] [-t | --self_testing] [-h | --help]\n"
@@ -99,6 +117,9 @@ ReturnCode printShortHelp() {
   return OK;
 }
 
+/**
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode printLongHelp() {
   printf("usage: SquareSolver [-o | --once_without_attempts] [-ow | --once_with_attempts]\n"
          "                    [-l | --loop] [-t | --self_testing] [-h | --help]\n"
@@ -119,6 +140,11 @@ ReturnCode printLongHelp() {
   return OK;
 }
 
+/**
+ * @param[in] test_eq     pointer to test's equation (can't be NULL)
+ * @param[in] expected_eq pointer to expected equation (can't be NULL)
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode printWrongTestSS(const SqEquation *test_eq, const SqEquation *expected_eq) {
   assert(test_eq != expected_eq);
   printf(

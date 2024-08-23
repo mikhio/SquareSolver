@@ -4,6 +4,7 @@
 #include "CliArgsHandler.h"
 #include "CliColors.h"
 
+
 int main(int argc, char **argv) {
   CliInterface ci = {LOOP, DEF_MAX_ATTEMPTS};
 

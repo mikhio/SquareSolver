@@ -7,6 +7,11 @@
 #include "IoTool.h"
 #include "CliColors.h"
 
+/**
+ * Creates local array with tests, reads tests from tests/ss_tests.txt and adds them to array.\n
+ * After runs all tests from that array and prints result.
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode ss_run_tests() {
   printf("Run tests/ss_test.txt:\n");
   SqEquation ss_tests[TESTS_AMOUNT] = {};
@@ -31,6 +36,13 @@ ReturnCode ss_run_tests() {
   return OK;
 }
 
+/**
+ * Reads coefs from ss_tests[tests_i] equation to tests_eq equation, solves it and compares them\n
+ * @param[in]  test_i   index of running test in ss_tests array
+ * @param[out] test_eq  pointer to current test's equationy
+ * @param[in]  ss_tests array with tests
+ * @return Erorr code (if ok return ReturnCode::OK, if wrong return ReturnCode::ERR_TEST_WRONG)
+ */
 ReturnCode ss_run_test(int test_i, SqEquation *test_eq, SqEquation ss_tests[TESTS_AMOUNT]) {
   assert(test_eq);
 
@@ -64,6 +76,12 @@ ReturnCode ss_run_test(int test_i, SqEquation *test_eq, SqEquation ss_tests[TEST
   }
 }
 
+/**
+ * Fill array with data from file
+ * @param[in]  file_path path to file 
+ * @param[out] eq_tests  array of tests
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode readTests(const char *file_path, SqEquation eq_tests[TESTS_AMOUNT]) {
   assert(file_path);
   assert(eq_tests);
@@ -107,6 +125,12 @@ ReturnCode readTests(const char *file_path, SqEquation eq_tests[TESTS_AMOUNT]) {
   return OK;
 }
 
+/**
+ * @param[in]  eq         const pointer to test's equation that add
+ * @param[out] eq_tests   array to that adds test's equation
+ * @param[in]  test_index index in array to that adds test's equation
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode addTest(const SqEquation *eq, SqEquation eq_tests[TESTS_AMOUNT], int test_index) {
   assert(eq);
   assert(eq_tests);
@@ -126,6 +150,12 @@ ReturnCode addTest(const SqEquation *eq, SqEquation eq_tests[TESTS_AMOUNT], int 
   return OK;
 }
 
+/**
+ * Parses from source string and writes to dest equation
+ * @param[in]  type_str source string with type
+ * @param[out] eq       dest equation
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode parseEqType(char *type_str, SqEquation *eq) {
   assert(type_str);
   assert(eq);

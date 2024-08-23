@@ -1,0 +1,43 @@
+\doxysection{Sq\+Equation.\+h}
+\hypertarget{_sq_equation_8h_source}{}\label{_sq_equation_8h_source}\mbox{\hyperlink{_sq_equation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SQ\_EQUATION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SQ\_EQUATION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_return_codes_8h}{ReturnCodes.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_sq_equation_8h_a596344e5a2992d2beec43b76a6294de0}{EPSILON}}\ =\ 1e-\/4;\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ IS\_EQUAL(a,\ b)\ (fabs(a\ -\/\ b)\ <\ EPSILON)\ }}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_sq_equation_8h_a0fdee4b1a06856396684b8359c53b3d8}{EqType}}\ \{}
+\DoxyCodeLine{00016\ \ \ \mbox{\hyperlink{_sq_equation_8h_a0fdee4b1a06856396684b8359c53b3d8ac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}}\ \ \ \ \ \ \ \ =\ 0,\ }
+\DoxyCodeLine{00017\ \ \ \mbox{\hyperlink{_sq_equation_8h_a0fdee4b1a06856396684b8359c53b3d8aa00374190265e7b6447db44977a7dff1}{ANY}}\ \ \ \ \ \ \ \ \ =\ 1,\ }
+\DoxyCodeLine{00018\ \ \ \mbox{\hyperlink{_sq_equation_8h_a0fdee4b1a06856396684b8359c53b3d8adc101ebf31c49c2d4b80b7c6f59f22cb}{LINEAR}}\ \ \ \ \ \ =\ 2,\ }
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{_sq_equation_8h_a0fdee4b1a06856396684b8359c53b3d8a4233fbf0cafb86abcee94b38d769fc59}{SQUARE}}\ \ \ \ \ \ =\ 3,\ }
+\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{_sq_equation_8h_a0fdee4b1a06856396684b8359c53b3d8ab60c4de68d9f60ea208ef16f5106bf83}{FULL\_SQUARE}}\ =\ 4,\ }
+\DoxyCodeLine{00021\ \ \ \mbox{\hyperlink{_sq_equation_8h_a0fdee4b1a06856396684b8359c53b3d8a8e470f158a8908f31f03631ec12b82d5}{D\_NEGATIVE}}\ \ =\ 5,\ }
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{_sq_equation_8h_a0fdee4b1a06856396684b8359c53b3d8ab9a321da349ac1355b717745736ad90c}{NO\_ROOTS}}\ \ \ \ =\ 6\ \ }
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_sq_equation}{SqEquation}}\ \{}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_sq_equation_a2a94d354d843fcccd009c9cc4b16a7ef}{a}};\ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_sq_equation_a46fbc5eb73fc35911f84a69bbbad1f8f}{b}};\ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_sq_equation_a5ba061156e4861036934aad4eef73980}{c}};\ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_sq_equation_a9e9dba2c8d8372601357cec9548ea976}{D}};\ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_sq_equation_a028722dfaf64466025b6caf949b356be}{x1}};\ \ \ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_sq_equation_a8a69fcfe58a735c552df552f6233c479}{x2}};\ \ \ }
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{_sq_equation_8h_a0fdee4b1a06856396684b8359c53b3d8}{EqType}}\ \mbox{\hyperlink{struct_sq_equation_ac56e96e588acd4cf49661a84c0cf7a54}{type}};\ }
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{ReturnCode}}\ \mbox{\hyperlink{_sq_equation_8h_a8e6ba5a419b5b0f1c2c30acd8f792543}{calcDiscriminant}}\ (\mbox{\hyperlink{struct_sq_equation}{SqEquation}}\ *eq);\ }
+\DoxyCodeLine{00044\ \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{ReturnCode}}\ \mbox{\hyperlink{_sq_equation_8h_ae794844df25efea9501d726f69a791f7}{defineType}}\ \ \ \ \ \ \ (\mbox{\hyperlink{struct_sq_equation}{SqEquation}}\ *eq);\ }
+\DoxyCodeLine{00045\ \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{ReturnCode}}\ \mbox{\hyperlink{_sq_equation_8h_a3f0ae523b735d59c027ba12c8beb8bab}{calcSquare}}\ \ \ \ \ \ \ (\mbox{\hyperlink{struct_sq_equation}{SqEquation}}\ *eq);\ }
+\DoxyCodeLine{00046\ \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{ReturnCode}}\ \mbox{\hyperlink{_sq_equation_8h_a33c9f1cbc2cdbca93af3fa134f9936c8}{calcLinear}}\ \ \ \ \ \ \ (\mbox{\hyperlink{struct_sq_equation}{SqEquation}}\ *eq);\ }
+\DoxyCodeLine{00047\ \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{ReturnCode}}\ \mbox{\hyperlink{_sq_equation_8h_ae9d667f682ca42b03e3a7d5327d58a49}{solveEq}}\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_sq_equation}{SqEquation}}\ *eq);\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SQ\_EQUATION\_H}}
+
+\end{DoxyCode}

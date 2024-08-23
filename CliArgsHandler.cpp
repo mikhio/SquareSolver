@@ -5,6 +5,13 @@
 #include "CliInterface.h"
 #include "IoTool.h"
 
+/**
+ * Set interface mode and print help info
+ * @param[out] ci   pointer to interface
+ * @param[in]  argc amount of arguments
+ * @param[in]  argv array of arguments
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode handleProgramArgs(CliInterface *ci, int argc, char **argv) {
   assert(ci);
   assert(argv);

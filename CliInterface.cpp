@@ -7,18 +7,22 @@
 #include "SS_Tester.h"
 #include "CliColors.h"
 
+
+/**
+ * Calls ss_run_loop() or ss_run_once() depends on CliInterface mode
+ * @param[in] ci const pointer to interface (can't be NULL)
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
 ReturnCode ss_ci_run(const CliInterface *ci) {
   assert(ci);
 
-  SqEquation eq = {};
-
   switch (ci->type) {
     case LOOP:
-      return ss_run_loop(ci, &eq);
+      return ss_run_loop(ci);
     case ONCE_WITH_ATTEMPTS:
-      return ss_run_once(ci, &eq, 1);
+      return ss_run_once(ci, 1);
     case ONCE_WITHOUT_ATTEMPTS:
-      return ss_run_once(ci, &eq, 0);
+      return ss_run_once(ci, 0);
     case SELF_TESTING:
       return ss_run_tests();
     default:
@@ -27,27 +31,40 @@ ReturnCode ss_ci_run(const CliInterface *ci) {
   }
 }
 
-ReturnCode ss_run_loop(const CliInterface *ci, SqEquation *eq) {
+/**
+ * Runs loop with calling run_once() untill quiting
+ * @param[in]  ci const pointer to interface (can't be NULL)
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
+ReturnCode ss_run_loop(const CliInterface *ci) {
   ReturnCode code = OK;
 
   do {
-    code = ss_run_once(ci, eq, 1);
+    code = ss_run_once(ci, 1);
   } while (code == OK);
 
   return code;
 }
 
-ReturnCode ss_run_once(const CliInterface *ci, SqEquation *eq, int with_attempts) {
+/**
+ * Reads and solves equation once
+ * @param[in]  ci const pointer to interface (can't be NULL)
+ * @param[in]  with_attempts flag that defines mode: 1 - ONCE_WITH_ATTEMPTS, 0 - ONCE_WTIOUT_ATTEMPTS
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
+ReturnCode ss_run_once(const CliInterface *ci, int with_attempts) {
   assert(ci);
 
   int cur_attempt = 0;
 
+  SqEquation eq = {};
+
   while (cur_attempt < ci->max_attempts) {
-    ReturnCode readCode = readEq(eq);
+    ReturnCode readCode = readEq(&eq);
 
     if (readCode == OK) {
-      solveEq(eq);
-      printEqRes(eq);
+      solveEq(&eq);
+      printEqRes(&eq);
 
       return OK;
     } else if (readCode == QUIT) {

@@ -1,0 +1,34 @@
+\doxysection{Cli\+Args\+Handler.\+h File Reference}
+\hypertarget{_cli_args_handler_8h}{}\label{_cli_args_handler_8h}\index{CliArgsHandler.h@{CliArgsHandler.h}}
+{\ttfamily \#include "{}Return\+Codes.\+h"{}}\newline
+{\ttfamily \#include "{}Cli\+Interface.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_cli_args_handler_8h_ad17cd87dcaec01188f2e91aa4a6c5baa}{handle\+Program\+Args}} (\mbox{\hyperlink{struct_cli_interface}{Cli\+Interface}} \texorpdfstring{$\ast$}{*}ci, int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\begin{DoxyCompactList}\small\item\em Handle cli flags and args. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_cli_args_handler_8h_ad17cd87dcaec01188f2e91aa4a6c5baa}\index{CliArgsHandler.h@{CliArgsHandler.h}!handleProgramArgs@{handleProgramArgs}}
+\index{handleProgramArgs@{handleProgramArgs}!CliArgsHandler.h@{CliArgsHandler.h}}
+\doxysubsubsection{\texorpdfstring{handleProgramArgs()}{handleProgramArgs()}}
+{\footnotesize\ttfamily \label{_cli_args_handler_8h_ad17cd87dcaec01188f2e91aa4a6c5baa} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} handle\+Program\+Args (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cli_interface}{Cli\+Interface}} \texorpdfstring{$\ast$}{*}}]{ci}{, }\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv}{}\end{DoxyParamCaption})}
+
+
+
+Handle cli flags and args. 
+
+Set interface mode and print help info 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em ci} & pointer to interface \\
+\hline
+\mbox{\texttt{ in}}  & {\em argc} & amount of arguments \\
+\hline
+\mbox{\texttt{ in}}  & {\em argv} & array of arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}
