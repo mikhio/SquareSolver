@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include <assert.h>
+#include "../inc/SS_Assert.h"
 #include "../inc/SqEquation.h"
 #include "../inc/ReturnCodes.h"
 
@@ -14,7 +14,8 @@
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode calcDiscriminant(SqEquation *eq) {
-  assert(eq);
+  SS_ASSERT(eq);
+
 
   if (eq->type == SQUARE) {
     eq->D = eq->b*eq->b - 4*eq->a*eq->c;
@@ -38,7 +39,7 @@ ReturnCode calcDiscriminant(SqEquation *eq) {
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode defineType(SqEquation *eq) {
-  assert(eq);
+  SS_ASSERT(eq);
 
   eq->type = NONE;
 
@@ -65,7 +66,7 @@ ReturnCode defineType(SqEquation *eq) {
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode calcSquare(SqEquation *eq) {
-  assert(eq);
+  SS_ASSERT(eq);
 
   if (eq->type == SQUARE || eq->type == FULL_SQUARE) {
     double D_sqrt = sqrt(eq->D);
@@ -85,7 +86,7 @@ ReturnCode calcSquare(SqEquation *eq) {
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode calcLinear(SqEquation *eq) {
-  assert(eq);
+  SS_ASSERT(eq);
   
   if (eq->type == LINEAR)
     eq->x1 = eq->x2 = -eq->c/eq->b;
@@ -102,7 +103,7 @@ ReturnCode calcLinear(SqEquation *eq) {
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode solveEq(SqEquation *eq) {
-  assert(eq);
+  SS_ASSERT(eq);
 
   defineType(eq);
 

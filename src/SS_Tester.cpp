@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <assert.h>
 #include <string.h>
+#include "../inc/SS_Assert.h"
 #include "../inc/SS_Tester.h"
 #include "../inc/ReturnCodes.h"
 #include "../inc/SqEquation.h"
@@ -44,7 +44,7 @@ ReturnCode ss_run_tests() {
  * @return Erorr code (if ok return ReturnCode::OK, if wrong return ReturnCode::ERR_TEST_WRONG)
  */
 ReturnCode ss_run_test(int test_i, SqEquation *test_eq, SqEquation ss_tests[TESTS_AMOUNT]) {
-  assert(test_eq);
+  SS_ASSERT(test_eq);
 
   test_eq->a = ss_tests[test_i].a;
   test_eq->b = ss_tests[test_i].b;
@@ -83,9 +83,9 @@ ReturnCode ss_run_test(int test_i, SqEquation *test_eq, SqEquation ss_tests[TEST
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode readTests(const char *file_path, SqEquation eq_tests[TESTS_AMOUNT]) {
-  assert(file_path);
-  assert(eq_tests);
-  assert(TESTS_AMOUNT > 0);
+  SS_ASSERT(file_path);
+  SS_ASSERT(eq_tests);
+  SS_ASSERT(TESTS_AMOUNT > 0);
 
   FILE *tests_file = fopen(file_path, "r");
   if (!tests_file)
@@ -132,10 +132,10 @@ ReturnCode readTests(const char *file_path, SqEquation eq_tests[TESTS_AMOUNT]) {
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode addTest(const SqEquation *eq, SqEquation eq_tests[TESTS_AMOUNT], int test_index) {
-  assert(eq);
-  assert(eq_tests);
-  assert(TESTS_AMOUNT > 0);
-  assert(test_index >= 0);
+  SS_ASSERT(eq);
+  SS_ASSERT(eq_tests);
+  SS_ASSERT(TESTS_AMOUNT > 0);
+  SS_ASSERT(test_index >= 0);
 
   if (test_index >= TESTS_AMOUNT) 
     return ERR_BUF_OVERFLOW;
@@ -157,8 +157,8 @@ ReturnCode addTest(const SqEquation *eq, SqEquation eq_tests[TESTS_AMOUNT], int 
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode parseEqType(char *type_str, SqEquation *eq) {
-  assert(type_str);
-  assert(eq);
+  SS_ASSERT(type_str);
+  SS_ASSERT(eq);
 
   if (strcmp(type_str, "SQ") == 0)
     eq->type = SQUARE;

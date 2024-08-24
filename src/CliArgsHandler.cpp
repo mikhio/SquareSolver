@@ -1,5 +1,5 @@
 #include <string.h>
-#include <assert.h>
+#include "../inc/SS_Assert.h"
 #include "../inc/CliArgsHandler.h"
 #include "../inc/ReturnCodes.h"
 #include "../inc/CliInterface.h"
@@ -13,9 +13,9 @@
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode handleProgramArgs(CliInterface *ci, int argc, char **argv) {
-  assert(ci);
-  assert(argv);
-  assert(argc > 0);
+  SS_ASSERT(ci);
+  SS_ASSERT(argv);
+  SS_ASSERT(argc > 0);
 
   if (argc == 1)
     return OK;

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <assert.h>
+#include "../inc/SS_Assert.h"
 #include "../inc/IoTool.h"
 #include "../inc/SqEquation.h"
 #include "../inc/ReturnCodes.h"
@@ -12,7 +12,7 @@
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode readEq(SqEquation *eq) {
-  assert(eq);
+  SS_ASSERT(eq);
 
   double a = 0, b = 0, c = 0;
 
@@ -66,7 +66,7 @@ ReturnCode checkQuit() {
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode printEqRes(const SqEquation *eq) {
-  assert(eq);
+  SS_ASSERT(eq);
 
   switch (eq->type) {
     case NO_ROOTS:
@@ -143,7 +143,7 @@ ReturnCode printLongHelp() {
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode printWrongTestSS(const SqEquation *test_eq, const SqEquation *expected_eq) {
-  assert(test_eq != expected_eq);
+  SS_ASSERT(test_eq != expected_eq);
   printf(
     MAGENTA("EXPECTED") ": a=%.4lg, b=%.4lg, c=%.4lg, type=%d, x1=%.4lg, x2=%.4lg\n"
     MAGENTA("GOT") ":      a=%.4lg, b=%.4lg, c=%.4lg, type=%d, x1=%.4lg, x2=%.4lg\n",

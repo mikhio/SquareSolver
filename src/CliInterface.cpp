@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <assert.h>
+#include "../inc/SS_Assert.h"
 #include "../inc/CliInterface.h"
 #include "../inc/IoTool.h"
 #include "../inc/SqEquation.h"
@@ -14,7 +14,7 @@
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode ss_ci_run(const CliInterface *ci) {
-  assert(ci);
+  SS_ASSERT(ci);
 
   switch (ci->type) {
     case LOOP:
@@ -53,7 +53,7 @@ ReturnCode ss_run_loop(const CliInterface *ci) {
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode ss_run_once(const CliInterface *ci, int with_attempts) {
-  assert(ci);
+  SS_ASSERT(ci);
 
   int cur_attempt = 0;
 

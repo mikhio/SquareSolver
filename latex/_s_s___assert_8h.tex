@@ -1,0 +1,54 @@
+\doxysection{inc/\+SS\+\_\+\+Assert.h File Reference}
+\hypertarget{_s_s___assert_8h}{}\label{_s_s___assert_8h}\index{inc/SS\_Assert.h@{inc/SS\_Assert.h}}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_s___assert_8h_a406315db0e5ba6f3a5e069960f6769ba}{SS\+\_\+\+ASSERT}}(x)
+\begin{DoxyCompactList}\small\item\em Calling assert macros. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_s_s___assert_8h_ab35ab285a4a2f3f6949b78dc12956ccf}{ss\+\_\+assert\+\_\+func}} (int x, const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+expr, const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+file, unsigned int \+\_\+\+\_\+line, const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+function)
+\begin{DoxyCompactList}\small\item\em My assert function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_s_s___assert_8h_a406315db0e5ba6f3a5e069960f6769ba}\index{SS\_Assert.h@{SS\_Assert.h}!SS\_ASSERT@{SS\_ASSERT}}
+\index{SS\_ASSERT@{SS\_ASSERT}!SS\_Assert.h@{SS\_Assert.h}}
+\doxysubsubsection{\texorpdfstring{SS\_ASSERT}{SS\_ASSERT}}
+{\footnotesize\ttfamily \label{_s_s___assert_8h_a406315db0e5ba6f3a5e069960f6769ba} 
+\#define SS\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_s_s___assert_8h_ab35ab285a4a2f3f6949b78dc12956ccf}{ss\_assert\_func}}(\ x\ ?\ 0\ :\ 1,\ \#x,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_func\_\_);}
+
+\end{DoxyCode}
+
+
+Calling assert macros. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_s___assert_8h_ab35ab285a4a2f3f6949b78dc12956ccf}\index{SS\_Assert.h@{SS\_Assert.h}!ss\_assert\_func@{ss\_assert\_func}}
+\index{ss\_assert\_func@{ss\_assert\_func}!SS\_Assert.h@{SS\_Assert.h}}
+\doxysubsubsection{\texorpdfstring{ss\_assert\_func()}{ss\_assert\_func()}}
+{\footnotesize\ttfamily \label{_s_s___assert_8h_ab35ab285a4a2f3f6949b78dc12956ccf} 
+void ss\+\_\+assert\+\_\+func (\begin{DoxyParamCaption}\item[{int}]{flag}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{\+\_\+\+\_\+expr}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{\+\_\+\+\_\+file}{, }\item[{unsigned int}]{\+\_\+\+\_\+line}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{\+\_\+\+\_\+function}{}\end{DoxyParamCaption})}
+
+
+
+My assert function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em flag} & if flag is 1 then make assert \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+\+\_\+expr} & string with checking expression \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+\+\_\+line} & number of expression line \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+\+\_\+function} & name of function with expression \\
+\hline
+\end{DoxyParams}

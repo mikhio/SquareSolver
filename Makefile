@@ -42,6 +42,10 @@ clean:
 run:
 	$(APP_PATH)
 
+.PHONY: docs
+docs: Doxyfile
+	doxygen Doxyfile
+
 .PHONY: all
 all:
 	make clean

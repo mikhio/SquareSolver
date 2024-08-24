@@ -5,10 +5,15 @@ var searchData=
   ['sqequation_2',['SqEquation',['../struct_sq_equation.html',1,'']]],
   ['sqequation_2eh_3',['SqEquation.h',['../_sq_equation_8h.html',1,'']]],
   ['square_4',['SQUARE',['../_sq_equation_8h.html#a0fdee4b1a06856396684b8359c53b3d8a4233fbf0cafb86abcee94b38d769fc59',1,'SqEquation.h']]],
-  ['ss_5fci_5frun_5',['ss_ci_run',['../_cli_interface_8h.html#ac83e6cf772558317a1a4cc7b4ac024c2',1,'CliInterface.cpp']]],
-  ['ss_5frun_5floop_6',['ss_run_loop',['../_cli_interface_8h.html#a656c26d022ef21da08a060d2209a492e',1,'CliInterface.cpp']]],
-  ['ss_5frun_5fonce_7',['ss_run_once',['../_cli_interface_8h.html#a2c021a7f810f6af0602af8c50d9669b6',1,'CliInterface.cpp']]],
-  ['ss_5frun_5ftest_8',['ss_run_test',['../_s_s___tester_8h.html#a0f7ed3602e200d9e712125ccc31d2c48',1,'SS_Tester.cpp']]],
-  ['ss_5frun_5ftests_9',['ss_run_tests',['../_s_s___tester_8h.html#a9afd592958821de2ffc48ee920419bf3',1,'SS_Tester.cpp']]],
-  ['ss_5ftester_2eh_10',['SS_Tester.h',['../_s_s___tester_8h.html',1,'']]]
+  ['squaresolver_5',['SquareSolver',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['ss_5fassert_6',['SS_ASSERT',['../_s_s___assert_8h.html#a406315db0e5ba6f3a5e069960f6769ba',1,'SS_Assert.h']]],
+  ['ss_5fassert_2eh_7',['SS_Assert.h',['../_s_s___assert_8h.html',1,'']]],
+  ['ss_5fassert_5ffunc_8',['ss_assert_func',['../_s_s___assert_8h.html#ab35ab285a4a2f3f6949b78dc12956ccf',1,'SS_Assert.cpp']]],
+  ['ss_5fci_5frun_9',['ss_ci_run',['../_cli_interface_8h.html#ac83e6cf772558317a1a4cc7b4ac024c2',1,'CliInterface.cpp']]],
+  ['ss_5frun_5floop_10',['ss_run_loop',['../_cli_interface_8h.html#a656c26d022ef21da08a060d2209a492e',1,'CliInterface.cpp']]],
+  ['ss_5frun_5fonce_11',['ss_run_once',['../_cli_interface_8h.html#a2c021a7f810f6af0602af8c50d9669b6',1,'CliInterface.cpp']]],
+  ['ss_5frun_5ftest_12',['ss_run_test',['../_s_s___tester_8h.html#a0f7ed3602e200d9e712125ccc31d2c48',1,'SS_Tester.cpp']]],
+  ['ss_5frun_5ftests_13',['ss_run_tests',['../_s_s___tester_8h.html#a9afd592958821de2ffc48ee920419bf3',1,'SS_Tester.cpp']]],
+  ['ss_5ftester_2eh_14',['SS_Tester.h',['../_s_s___tester_8h.html',1,'']]],
+  ['started_15',['Get started',['../md__r_e_a_d_m_e.html#autotoc_md1',1,'']]]
 ];
