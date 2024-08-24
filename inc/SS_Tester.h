@@ -3,8 +3,8 @@
 
 /** @file SS_Tester.h */
 
-#include "SqEquation.h"
-#include "ReturnCodes.h"
+#include "../inc/SqEquation.h"
+#include "../inc/ReturnCodes.h"
 
 const int TESTS_AMOUNT = 6; ///< Amount of SolveSquare tests
 

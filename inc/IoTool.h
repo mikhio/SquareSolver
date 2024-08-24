@@ -3,8 +3,8 @@
 
 /** @file IoTool.h */
 
-#include "SqEquation.h"
-#include "ReturnCodes.h"
+#include "../inc/SqEquation.h"
+#include "../inc/ReturnCodes.h"
 
 const int BUFF_SIZE = 10; ///< checkQuit's buffer size
 

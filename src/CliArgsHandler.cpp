@@ -1,9 +1,9 @@
 #include <string.h>
 #include <assert.h>
-#include "CliArgsHandler.h"
-#include "ReturnCodes.h"
-#include "CliInterface.h"
-#include "IoTool.h"
+#include "../inc/CliArgsHandler.h"
+#include "../inc/ReturnCodes.h"
+#include "../inc/CliInterface.h"
+#include "../inc/IoTool.h"
 
 /**
  * Set interface mode and print help info

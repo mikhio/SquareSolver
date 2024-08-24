@@ -4,7 +4,7 @@
 /** @file SqEquation.h */
 
 #include <math.h>
-#include "ReturnCodes.h"
+#include "../inc/ReturnCodes.h"
 
 const double EPSILON = 1e-4; ///< Constant for max difference between "equal" doubles
 

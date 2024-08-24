@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <assert.h>
-#include "CliInterface.h"
-#include "IoTool.h"
-#include "SqEquation.h"
-#include "ReturnCodes.h"
-#include "SS_Tester.h"
-#include "CliColors.h"
+#include "../inc/CliInterface.h"
+#include "../inc/IoTool.h"
+#include "../inc/SqEquation.h"
+#include "../inc/ReturnCodes.h"
+#include "../inc/SS_Tester.h"
+#include "../inc/CliColors.h"
 
 
 /**

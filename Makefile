@@ -1,7 +1,13 @@
-cpp_files := main.cpp SqEquation.cpp CliInterface.cpp IoTool.cpp SS_Tester.cpp CliArgsHandler.cpp
-obj_files := objs/main.o objs/SqEquation.o objs/CliInterface.o objs/IoTool.o objs/SS_Tester.o objs/CliArgsHandler.o
+CXX := clang++
 
-cpp_flags := -D _DEBUG -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ -Waggressive-loop-optimizations \
+SRC_PATH := ./src
+APP_PATH := ./build/SquareSolver
+CCH_PATH := ./cpp_cache
+
+SOURCES := $(wildcard $(SRC_PATH)/*.cpp)
+OBJECTS := $(addprefix $(CCH_PATH)/, $(patsubst %.cpp, %.o, $(SOURCES)))
+
+CXX_FLAGS := -D _DEBUG -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ -Waggressive-loop-optimizations \
    -Wc++14-compat -Wmissing-declarations -Wcast-qual -Wchar-subscripts                             \
    -Wconditionally-supported -Wconversion -Wctor-dtor-privacy -Wempty-body -Wfloat-equal           \
    -Wformat-nonliteral -Wformat-security -Wformat-signedness -Wformat=2 -Winline                   \
@@ -15,19 +21,30 @@ cpp_flags := -D _DEBUG -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ -Waggressive
    -fstack-protector -fstrict-overflow -fno-omit-frame-pointer -Wlarger-than=8192                  \
    -Wstack-usage=8192 -fsanitize=address -fsanitize=undefined -fPIE -Werror=vla -pedantic
 
-build/SquareSolver: $(obj_files) 
-	clang++ $(cpp_flags) -o build/SquareSolver $(obj_files)
+# Compiling and linking
+$(APP_PATH): $(OBJECTS) 
+	$(CXX) $(CXX_FLAGS) $^ -o build/SquareSolver
 
-objs/%.o: %.cpp
-	clang++ -c $< -o $@
 
-.PHONY: clean run all
+$(CCH_PATH)/$(SRC_PATH)/%.o: $(SRC_PATH)/%.cpp Makefile
+	$(CXX) -c $< -o $@
 
+
+# Simplification
+.PHONY: build
+build: $(APP_PATH)
+
+.PHONY: clean
 clean:
-	rm -rf ./build/*
+	$(RM) $(OBJECTS) $(DEPENDS) $(APP_PATH)
+
+.PHONY: run
 run:
-	build/SquareSolver
+	$(APP_PATH)
+
+.PHONY: all
 all:
 	make clean
-	make compile
+	make build
 	make run
+

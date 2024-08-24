@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <assert.h>
 #include <string.h>
-#include "SS_Tester.h"
-#include "ReturnCodes.h"
-#include "SqEquation.h"
-#include "IoTool.h"
-#include "CliColors.h"
+#include "../inc/SS_Tester.h"
+#include "../inc/ReturnCodes.h"
+#include "../inc/SqEquation.h"
+#include "../inc/IoTool.h"
+#include "../inc/CliColors.h"
 
 /**
  * Creates local array with tests, reads tests from tests/ss_tests.txt and adds them to array.\n

@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
-#include "IoTool.h"
-#include "SqEquation.h"
-#include "ReturnCodes.h"
-#include "CliColors.h"
+#include "../inc/IoTool.h"
+#include "../inc/SqEquation.h"
+#include "../inc/ReturnCodes.h"
+#include "../inc/CliColors.h"
 
 
 /**

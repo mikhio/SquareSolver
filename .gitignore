@@ -1,3 +1,3 @@
 *.swp
-objs/*
 build/*
+cpp_cache/src/*

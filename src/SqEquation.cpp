@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
-#include "SqEquation.h"
-#include "ReturnCodes.h"
+#include "../inc/SqEquation.h"
+#include "../inc/ReturnCodes.h"
 
 /**
  * Needs eq->type to be equal SQUARE\n

@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "CliInterface.h"
-#include "ReturnCodes.h"
-#include "CliArgsHandler.h"
-#include "CliColors.h"
+#include "../inc/CliInterface.h"
+#include "../inc/ReturnCodes.h"
+#include "../inc/CliArgsHandler.h"
+#include "../inc/CliColors.h"
 
 
 int main(int argc, char **argv) {
@@ -21,7 +21,6 @@ int main(int argc, char **argv) {
     else if (runCode != OK)
       fprintf(stderr, RED("ERORR") ": CliInterface crashed with code %d\n", runCode);
   }
-
 
   return 0;
 }

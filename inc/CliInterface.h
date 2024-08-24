@@ -3,8 +3,8 @@
 
 /** @file CliInterface.h */ 
 
-#include "SqEquation.h"
-#include "ReturnCodes.h"
+#include "../inc/SqEquation.h"
+#include "../inc/ReturnCodes.h"
 
 const int DEF_MAX_ATTEMPTS = 10; ///< Default max attempts of input coefs
 

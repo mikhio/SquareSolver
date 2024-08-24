@@ -3,8 +3,8 @@
 
 /** @file CliArgsHandler.h */
 
-#include "ReturnCodes.h"
-#include "CliInterface.h"
+#include "../inc/ReturnCodes.h"
+#include "../inc/CliInterface.h"
 
 ReturnCode handleProgramArgs(CliInterface *ci, int argc, char **argv); ///< Handle cli flags and args
 
