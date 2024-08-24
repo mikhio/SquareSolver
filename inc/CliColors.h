@@ -10,11 +10,13 @@
 #define COLOR_BLU   "\x1B[1;34m"  ///< Constant for ASCII blue bold color
 #define COLOR_MAG   "\x1B[1;35m"  ///< Constant for ASCII magenta bold color
 #define COLOR_WHT   "\x1B[1;37m"  ///< Constant for ASCII white bold color
-
+#define COLOR_BLK   "\x1B[1m"     ///< Constant for ASCII black bold color
 
 #define RED(str)     COLOR_RED str COLOR_RESET ///< Macros that set red color to str
 #define GREEN(str)   COLOR_GRN str COLOR_RESET ///< Macros that set green color to str
 #define MAGENTA(str) COLOR_MAG str COLOR_RESET ///< Macros that set magenta color to str
+#define BLACK(str)   COLOR_BLK str COLOR_RESET ///< Macros that set black color to str
+
 
 
 

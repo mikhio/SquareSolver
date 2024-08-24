@@ -5,6 +5,7 @@ a  b  c x1 x2 type (FS = FULL_SQUARE, L=LINEAR, SQ=SQUARE, A=ANY NR=NO_ROOTS, DN
 0  1  1 -1  0  L
 0  0  0  0  0  A
 0  0  1  0  0  NR
-0  2  3  0  0  DN 
+1  2  3  0  0  DN 
 1  0 -1  1 -1  SQ
 #END
+

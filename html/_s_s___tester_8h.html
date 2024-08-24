@@ -89,6 +89,7 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">SS_Tester.h File Reference</div></div>
@@ -99,34 +100,46 @@ $(function(){ initResizable(false); });
 </div>
 <p><a href="_s_s___tester_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_s___tests.html">SS_Tests</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9afd592958821de2ffc48ee920419bf3" id="r_a9afd592958821de2ffc48ee920419bf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9afd592958821de2ffc48ee920419bf3">ss_run_tests</a> ()</td></tr>
 <tr class="memdesc:a9afd592958821de2ffc48ee920419bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs tests for SolveSquare.  <br /></td></tr>
 <tr class="separator:a9afd592958821de2ffc48ee920419bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f7ed3602e200d9e712125ccc31d2c48" id="r_a0f7ed3602e200d9e712125ccc31d2c48"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f7ed3602e200d9e712125ccc31d2c48">ss_run_test</a> (int test_i, <a class="el" href="struct_sq_equation.html">SqEquation</a> *test_eq, <a class="el" href="struct_sq_equation.html">SqEquation</a> ss_tests[<a class="el" href="#a7908a7846dcff101696626934a65237d">TESTS_AMOUNT</a>])</td></tr>
-<tr class="memdesc:a0f7ed3602e200d9e712125ccc31d2c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs one test for SolveSquare.  <br /></td></tr>
-<tr class="separator:a0f7ed3602e200d9e712125ccc31d2c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b1548f7dd46bb12f7dec4a017e9babe" id="r_a2b1548f7dd46bb12f7dec4a017e9babe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b1548f7dd46bb12f7dec4a017e9babe">readTests</a> (const char *file_path, <a class="el" href="struct_sq_equation.html">SqEquation</a> eq_tests[<a class="el" href="#a7908a7846dcff101696626934a65237d">TESTS_AMOUNT</a>])</td></tr>
-<tr class="memdesc:a2b1548f7dd46bb12f7dec4a017e9babe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads tests from file.  <br /></td></tr>
-<tr class="separator:a2b1548f7dd46bb12f7dec4a017e9babe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74ee4668b225d67adb81dceb7bec737d" id="r_a74ee4668b225d67adb81dceb7bec737d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74ee4668b225d67adb81dceb7bec737d">addTest</a> (const <a class="el" href="struct_sq_equation.html">SqEquation</a> *eq, <a class="el" href="struct_sq_equation.html">SqEquation</a> eq_tests[<a class="el" href="#a7908a7846dcff101696626934a65237d">TESTS_AMOUNT</a>], int test_index)</td></tr>
-<tr class="memdesc:a74ee4668b225d67adb81dceb7bec737d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add test to array with tests.  <br /></td></tr>
-<tr class="separator:a74ee4668b225d67adb81dceb7bec737d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb5334c19b642df0969a915d164734e" id="r_a2eb5334c19b642df0969a915d164734e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2eb5334c19b642df0969a915d164734e">ss_run_test</a> (int test_index, <a class="el" href="struct_sq_equation.html">SqEquation</a> *test_eq, <a class="el" href="struct_s_s___tests.html">SS_Tests</a> *ss_tests)</td></tr>
+<tr class="memdesc:a2eb5334c19b642df0969a915d164734e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs one test for SolveSquare.  <br /></td></tr>
+<tr class="separator:a2eb5334c19b642df0969a915d164734e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9523b5550504169d28597a18eddfbc05" id="r_a9523b5550504169d28597a18eddfbc05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9523b5550504169d28597a18eddfbc05">readTests</a> (const char *file_path, <a class="el" href="struct_s_s___tests.html">SS_Tests</a> *ss_tests)</td></tr>
+<tr class="memdesc:a9523b5550504169d28597a18eddfbc05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads tests from file.  <br /></td></tr>
+<tr class="separator:a9523b5550504169d28597a18eddfbc05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8a0d996513fe12f1ee83e3f6469f544" id="r_ad8a0d996513fe12f1ee83e3f6469f544"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8a0d996513fe12f1ee83e3f6469f544">addTest</a> (const <a class="el" href="struct_sq_equation.html">SqEquation</a> *eq, <a class="el" href="struct_s_s___tests.html">SS_Tests</a> *ss_tests)</td></tr>
+<tr class="memdesc:ad8a0d996513fe12f1ee83e3f6469f544"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add test to array with tests.  <br /></td></tr>
+<tr class="separator:ad8a0d996513fe12f1ee83e3f6469f544"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc0a810530cf29130b9a25a089de11b8" id="r_abc0a810530cf29130b9a25a089de11b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc0a810530cf29130b9a25a089de11b8">parseEqType</a> (char *type_str, <a class="el" href="struct_sq_equation.html">SqEquation</a> *eq)</td></tr>
 <tr class="memdesc:abc0a810530cf29130b9a25a089de11b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses equation type in file with tests.  <br /></td></tr>
 <tr class="separator:abc0a810530cf29130b9a25a089de11b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0f518da5f19ef0e514a495155a3729d" id="r_ae0f518da5f19ef0e514a495155a3729d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0f518da5f19ef0e514a495155a3729d">testsAllocateMore</a> (<a class="el" href="struct_s_s___tests.html">SS_Tests</a> *ss_tests, int chunk_size)</td></tr>
+<tr class="memdesc:ae0f518da5f19ef0e514a495155a3729d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate more memory for tests.  <br /></td></tr>
+<tr class="separator:ae0f518da5f19ef0e514a495155a3729d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a7908a7846dcff101696626934a65237d" id="r_a7908a7846dcff101696626934a65237d"><td class="memItemLeft" align="right" valign="top"><a id="a7908a7846dcff101696626934a65237d" name="a7908a7846dcff101696626934a65237d"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_AMOUNT</b> = 6</td></tr>
-<tr class="memdesc:a7908a7846dcff101696626934a65237d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amount of SolveSquare tests. <br /></td></tr>
-<tr class="separator:a7908a7846dcff101696626934a65237d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddfb36877c6db46dac15547c194385a" id="r_a0ddfb36877c6db46dac15547c194385a"><td class="memItemLeft" align="right" valign="top"><a id="a0ddfb36877c6db46dac15547c194385a" name="a0ddfb36877c6db46dac15547c194385a"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_CHUNK_SIZE</b> = 100</td></tr>
+<tr class="memdesc:a0ddfb36877c6db46dac15547c194385a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of tests that will be allocated after overflowed. <br /></td></tr>
+<tr class="separator:a0ddfb36877c6db46dac15547c194385a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab98d90341c43c6446bfafac6991d11fc" id="r_ab98d90341c43c6446bfafac6991d11fc"><td class="memItemLeft" align="right" valign="top"><a id="ab98d90341c43c6446bfafac6991d11fc" name="ab98d90341c43c6446bfafac6991d11fc"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_FILE_PATH</b> = &quot;tests/ss_tests2.txt&quot;</td></tr>
+<tr class="memdesc:ab98d90341c43c6446bfafac6991d11fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to file with tests. <br /></td></tr>
+<tr class="separator:ab98d90341c43c6446bfafac6991d11fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a74ee4668b225d67adb81dceb7bec737d" name="a74ee4668b225d67adb81dceb7bec737d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74ee4668b225d67adb81dceb7bec737d">&#9670;&#160;</a></span>addTest()</h2>
+<a id="ad8a0d996513fe12f1ee83e3f6469f544" name="ad8a0d996513fe12f1ee83e3f6469f544"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a0d996513fe12f1ee83e3f6469f544">&#9670;&#160;</a></span>addTest()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -139,12 +152,7 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_AMOUNT</b>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_sq_equation.html">SqEquation</a></td>          <td class="paramname"><span class="paramname"><em>eq_tests</em></span>[TESTS_AMOUNT], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>test_index</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="struct_s_s___tests.html">SS_Tests</a> *</td>          <td class="paramname"><span class="paramname"><em>ss_tests</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -153,8 +161,7 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_AMOUNT</b>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">eq</td><td>const pointer to test's equation that add </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">eq_tests</td><td>array to that adds test's equation </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">test_index</td><td>index in array to that adds test's equation </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ss_tests</td><td>pointer to structure with tests </td></tr>
   </table>
   </dd>
 </dl>
@@ -193,8 +200,8 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_AMOUNT</b>
 
 </div>
 </div>
-<a id="a2b1548f7dd46bb12f7dec4a017e9babe" name="a2b1548f7dd46bb12f7dec4a017e9babe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b1548f7dd46bb12f7dec4a017e9babe">&#9670;&#160;</a></span>readTests()</h2>
+<a id="a9523b5550504169d28597a18eddfbc05" name="a9523b5550504169d28597a18eddfbc05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9523b5550504169d28597a18eddfbc05">&#9670;&#160;</a></span>readTests()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,7 +214,7 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_AMOUNT</b>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_sq_equation.html">SqEquation</a></td>          <td class="paramname"><span class="paramname"><em>eq_tests</em></span>[TESTS_AMOUNT]&#160;)</td>
+          <td class="paramtype"><a class="el" href="struct_s_s___tests.html">SS_Tests</a> *</td>          <td class="paramname"><span class="paramname"><em>ss_tests</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -216,7 +223,7 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_AMOUNT</b>
 <p>Fill array with data from file </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">file_path</td><td>path to file </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">eq_tests</td><td>array of tests </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ss_tests</td><td>pointer to sturcture with tests </td></tr>
   </table>
   </dd>
 </dl>
@@ -224,8 +231,8 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_AMOUNT</b>
 
 </div>
 </div>
-<a id="a0f7ed3602e200d9e712125ccc31d2c48" name="a0f7ed3602e200d9e712125ccc31d2c48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f7ed3602e200d9e712125ccc31d2c48">&#9670;&#160;</a></span>ss_run_test()</h2>
+<a id="a2eb5334c19b642df0969a915d164734e" name="a2eb5334c19b642df0969a915d164734e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eb5334c19b642df0969a915d164734e">&#9670;&#160;</a></span>ss_run_test()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,7 +240,7 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_AMOUNT</b>
         <tr>
           <td class="memname"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a> ss_run_test </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>test_i</em></span>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>test_index</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -243,7 +250,7 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_AMOUNT</b>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_sq_equation.html">SqEquation</a></td>          <td class="paramname"><span class="paramname"><em>ss_tests</em></span>[TESTS_AMOUNT]&#160;)</td>
+          <td class="paramtype"><a class="el" href="struct_s_s___tests.html">SS_Tests</a> *</td>          <td class="paramname"><span class="paramname"><em>ss_tests</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -252,9 +259,9 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_AMOUNT</b>
 <p>Reads coefs from ss_tests[tests_i] equation to tests_eq equation, solves it and compares them<br  />
 </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">test_i</td><td>index of running test in ss_tests array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">test_index</td><td>index of running test in ss_tests array </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">test_eq</td><td>pointer to current test's equationy </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ss_tests</td><td>array with tests </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ss_tests</td><td>pointer to ss_tests sturcture with tests </td></tr>
   </table>
   </dd>
 </dl>
@@ -280,6 +287,37 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_AMOUNT</b>
 <p>Runs tests for SolveSquare. </p>
 <p>Creates local array with tests, reads tests from tests/ss_tests.txt and adds them to array.<br  />
 After runs all tests from that array and prints result. </p><dl class="section return"><dt>Returns</dt><dd>Erorr code (if ok return ReturnCode::OK) </dd></dl>
+
+</div>
+</div>
+<a id="ae0f518da5f19ef0e514a495155a3729d" name="ae0f518da5f19ef0e514a495155a3729d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0f518da5f19ef0e514a495155a3729d">&#9670;&#160;</a></span>testsAllocateMore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a> testsAllocateMore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_s___tests.html">SS_Tests</a> *</td>          <td class="paramname"><span class="paramname"><em>ss_tests</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>chunk_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate more memory for tests. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ss_tests</td><td>pointer to sturucte with tests </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">chunck_size</td><td>size of memory that will be additionally allocated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Erorr code (if ok return ReturnCode::OK) </dd></dl>
 
 </div>
 </div>

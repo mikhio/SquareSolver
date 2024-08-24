@@ -6,7 +6,6 @@
 #include "../inc/SqEquation.h"
 #include "../inc/ReturnCodes.h"
 
-const int BUFF_SIZE = 10; ///< checkQuit's buffer size
 
 ReturnCode checkQuit   (); ///< Checks entering quit command
 ReturnCode clearBuffer (); ///< Clear stdin buffer

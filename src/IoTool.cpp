@@ -52,6 +52,8 @@ ReturnCode clearBuffer() {
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode checkQuit() {
+  const int BUFF_SIZE = 10;
+
   char buffer[BUFF_SIZE] = {};
   fgets(buffer, BUFF_SIZE, stdin);
 

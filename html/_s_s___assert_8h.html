@@ -124,8 +124,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#ab35ab285a4a2f3f6949b78dc12956ccf">ss_assert_func</a>( x ? 0 : 1, #x, __FILE__, __LINE__, __func__);</div>
-<div class="ttc" id="a_s_s___assert_8h_html_ab35ab285a4a2f3f6949b78dc12956ccf"><div class="ttname"><a href="#ab35ab285a4a2f3f6949b78dc12956ccf">ss_assert_func</a></div><div class="ttdeci">void ss_assert_func(int x, const char *__expr, const char *__file, unsigned int __line, const char *__function)</div><div class="ttdoc">My assert function.</div><div class="ttdef"><b>Definition</b> SS_Assert.cpp:11</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#ab35ab285a4a2f3f6949b78dc12956ccf">ss_assert_func</a>( x ? 0 : 1, #x, __FILE__, __LINE__, __PRETTY_FUNCTION__);</div>
+<div class="ttc" id="a_s_s___assert_8h_html_ab35ab285a4a2f3f6949b78dc12956ccf"><div class="ttname"><a href="#ab35ab285a4a2f3f6949b78dc12956ccf">ss_assert_func</a></div><div class="ttdeci">void ss_assert_func(int x, const char *__expr, const char *__file, unsigned int __line, const char *__function)</div><div class="ttdoc">My assert function.</div><div class="ttdef"><b>Definition</b> SS_Assert.cpp:13</div></div>
 </div><!-- fragment -->
 <p>Calling assert macros. </p>
 
@@ -167,7 +167,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>My assert function. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Printf error and call exit(1) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">flag</td><td>if flag is 1 then make assert </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">__expr</td><td>string with checking expression </td></tr>

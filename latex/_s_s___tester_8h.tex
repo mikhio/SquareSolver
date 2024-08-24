@@ -2,33 +2,43 @@
 \hypertarget{_s_s___tester_8h}{}\label{_s_s___tester_8h}\index{inc/SS\_Tester.h@{inc/SS\_Tester.h}}
 {\ttfamily \#include "{}../inc/\+Sq\+Equation.\+h"{}}\newline
 {\ttfamily \#include "{}../inc/\+Return\+Codes.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_a9afd592958821de2ffc48ee920419bf3}{ss\+\_\+run\+\_\+tests}} ()
 \begin{DoxyCompactList}\small\item\em Runs tests for Solve\+Square. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_a0f7ed3602e200d9e712125ccc31d2c48}{ss\+\_\+run\+\_\+test}} (int test\+\_\+i, \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}test\+\_\+eq, \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} ss\+\_\+tests\mbox{[}\mbox{\hyperlink{_s_s___tester_8h_a7908a7846dcff101696626934a65237d}{TESTS\+\_\+\+AMOUNT}}\mbox{]})
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_a2eb5334c19b642df0969a915d164734e}{ss\+\_\+run\+\_\+test}} (int test\+\_\+index, \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}test\+\_\+eq, \mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}} \texorpdfstring{$\ast$}{*}ss\+\_\+tests)
 \begin{DoxyCompactList}\small\item\em Runs one test for Solve\+Square. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_a2b1548f7dd46bb12f7dec4a017e9babe}{read\+Tests}} (const char \texorpdfstring{$\ast$}{*}file\+\_\+path, \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} eq\+\_\+tests\mbox{[}\mbox{\hyperlink{_s_s___tester_8h_a7908a7846dcff101696626934a65237d}{TESTS\+\_\+\+AMOUNT}}\mbox{]})
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_a9523b5550504169d28597a18eddfbc05}{read\+Tests}} (const char \texorpdfstring{$\ast$}{*}file\+\_\+path, \mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}} \texorpdfstring{$\ast$}{*}ss\+\_\+tests)
 \begin{DoxyCompactList}\small\item\em Reads tests from file. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_a74ee4668b225d67adb81dceb7bec737d}{add\+Test}} (const \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}eq, \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} eq\+\_\+tests\mbox{[}\mbox{\hyperlink{_s_s___tester_8h_a7908a7846dcff101696626934a65237d}{TESTS\+\_\+\+AMOUNT}}\mbox{]}, int test\+\_\+index)
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_ad8a0d996513fe12f1ee83e3f6469f544}{add\+Test}} (const \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}eq, \mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}} \texorpdfstring{$\ast$}{*}ss\+\_\+tests)
 \begin{DoxyCompactList}\small\item\em Add test to array with tests. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_abc0a810530cf29130b9a25a089de11b8}{parse\+Eq\+Type}} (char \texorpdfstring{$\ast$}{*}type\+\_\+str, \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}eq)
-\begin{DoxyCompactList}\small\item\em Parses equation type in file with tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Parses equation type in file with tests. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_ae0f518da5f19ef0e514a495155a3729d}{tests\+Allocate\+More}} (\mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}} \texorpdfstring{$\ast$}{*}ss\+\_\+tests, int chunk\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Allocate more memory for tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{_s_s___tester_8h_a7908a7846dcff101696626934a65237d}\label{_s_s___tester_8h_a7908a7846dcff101696626934a65237d} 
-const int {\bfseries TESTS\+\_\+\+AMOUNT} = 6
-\begin{DoxyCompactList}\small\item\em Amount of Solve\+Square tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{_s_s___tester_8h_a0ddfb36877c6db46dac15547c194385a}\label{_s_s___tester_8h_a0ddfb36877c6db46dac15547c194385a} 
+const int {\bfseries TESTS\+\_\+\+CHUNK\+\_\+\+SIZE} = 100
+\begin{DoxyCompactList}\small\item\em Size of tests that will be allocated after overflowed. \end{DoxyCompactList}\item 
+\Hypertarget{_s_s___tester_8h_ab98d90341c43c6446bfafac6991d11fc}\label{_s_s___tester_8h_ab98d90341c43c6446bfafac6991d11fc} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries TESTS\+\_\+\+FILE\+\_\+\+PATH} = "{}tests/ss\+\_\+tests2.\+txt"{}
+\begin{DoxyCompactList}\small\item\em Path to file with tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{_s_s___tester_8h_a74ee4668b225d67adb81dceb7bec737d}\index{SS\_Tester.h@{SS\_Tester.h}!addTest@{addTest}}
+\Hypertarget{_s_s___tester_8h_ad8a0d996513fe12f1ee83e3f6469f544}\index{SS\_Tester.h@{SS\_Tester.h}!addTest@{addTest}}
 \index{addTest@{addTest}!SS\_Tester.h@{SS\_Tester.h}}
 \doxysubsubsection{\texorpdfstring{addTest()}{addTest()}}
-{\footnotesize\ttfamily \label{_s_s___tester_8h_a74ee4668b225d67adb81dceb7bec737d} 
-\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} add\+Test (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}}]{eq}{, }\item[{\mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}}}]{eq\+\_\+tests}{\mbox{[}\+TESTS\+\_\+\+AMOUNT\mbox{]}, }\item[{int}]{test\+\_\+index}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{_s_s___tester_8h_ad8a0d996513fe12f1ee83e3f6469f544} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} add\+Test (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}}]{eq}{, }\item[{\mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}} \texorpdfstring{$\ast$}{*}}]{ss\+\_\+tests}{}\end{DoxyParamCaption})}
 
 
 
@@ -38,9 +48,7 @@ Add test to array with tests.
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em eq} & const pointer to test\textquotesingle{}s equation that add \\
 \hline
-\mbox{\texttt{ out}}  & {\em eq\+\_\+tests} & array to that adds test\textquotesingle{}s equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em test\+\_\+index} & index in array to that adds test\textquotesingle{}s equation \\
+\mbox{\texttt{ out}}  & {\em ss\+\_\+tests} & pointer to structure with tests \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -66,11 +74,11 @@ Parses from source string and writes to dest equation
 \begin{DoxyReturn}{Returns}
 Erorr code (if ok return Return\+Code\+::\+OK) 
 \end{DoxyReturn}
-\Hypertarget{_s_s___tester_8h_a2b1548f7dd46bb12f7dec4a017e9babe}\index{SS\_Tester.h@{SS\_Tester.h}!readTests@{readTests}}
+\Hypertarget{_s_s___tester_8h_a9523b5550504169d28597a18eddfbc05}\index{SS\_Tester.h@{SS\_Tester.h}!readTests@{readTests}}
 \index{readTests@{readTests}!SS\_Tester.h@{SS\_Tester.h}}
 \doxysubsubsection{\texorpdfstring{readTests()}{readTests()}}
-{\footnotesize\ttfamily \label{_s_s___tester_8h_a2b1548f7dd46bb12f7dec4a017e9babe} 
-\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} read\+Tests (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+\_\+path}{, }\item[{\mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}}}]{eq\+\_\+tests}{\mbox{[}\+TESTS\+\_\+\+AMOUNT\mbox{]}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{_s_s___tester_8h_a9523b5550504169d28597a18eddfbc05} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} read\+Tests (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+\_\+path}{, }\item[{\mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}} \texorpdfstring{$\ast$}{*}}]{ss\+\_\+tests}{}\end{DoxyParamCaption})}
 
 
 
@@ -80,17 +88,17 @@ Fill array with data from file
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em file\+\_\+path} & path to file \\
 \hline
-\mbox{\texttt{ out}}  & {\em eq\+\_\+tests} & array of tests \\
+\mbox{\texttt{ out}}  & {\em ss\+\_\+tests} & pointer to sturcture with tests \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Erorr code (if ok return Return\+Code\+::\+OK) 
 \end{DoxyReturn}
-\Hypertarget{_s_s___tester_8h_a0f7ed3602e200d9e712125ccc31d2c48}\index{SS\_Tester.h@{SS\_Tester.h}!ss\_run\_test@{ss\_run\_test}}
+\Hypertarget{_s_s___tester_8h_a2eb5334c19b642df0969a915d164734e}\index{SS\_Tester.h@{SS\_Tester.h}!ss\_run\_test@{ss\_run\_test}}
 \index{ss\_run\_test@{ss\_run\_test}!SS\_Tester.h@{SS\_Tester.h}}
 \doxysubsubsection{\texorpdfstring{ss\_run\_test()}{ss\_run\_test()}}
-{\footnotesize\ttfamily \label{_s_s___tester_8h_a0f7ed3602e200d9e712125ccc31d2c48} 
-\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} ss\+\_\+run\+\_\+test (\begin{DoxyParamCaption}\item[{int}]{test\+\_\+i}{, }\item[{\mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}}]{test\+\_\+eq}{, }\item[{\mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}}}]{ss\+\_\+tests}{\mbox{[}\+TESTS\+\_\+\+AMOUNT\mbox{]}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{_s_s___tester_8h_a2eb5334c19b642df0969a915d164734e} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} ss\+\_\+run\+\_\+test (\begin{DoxyParamCaption}\item[{int}]{test\+\_\+index}{, }\item[{\mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}}]{test\+\_\+eq}{, }\item[{\mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}} \texorpdfstring{$\ast$}{*}}]{ss\+\_\+tests}{}\end{DoxyParamCaption})}
 
 
 
@@ -99,11 +107,11 @@ Runs one test for Solve\+Square.
 Reads coefs from ss\+\_\+tests\mbox{[}tests\+\_\+i\mbox{]} equation to tests\+\_\+eq equation, solves it and compares them~\newline
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em test\+\_\+i} & index of running test in ss\+\_\+tests array \\
+\mbox{\texttt{ in}}  & {\em test\+\_\+index} & index of running test in ss\+\_\+tests array \\
 \hline
 \mbox{\texttt{ out}}  & {\em test\+\_\+eq} & pointer to current test\textquotesingle{}s equationy \\
 \hline
-\mbox{\texttt{ in}}  & {\em ss\+\_\+tests} & array with tests \\
+\mbox{\texttt{ in}}  & {\em ss\+\_\+tests} & pointer to ss\+\_\+tests sturcture with tests \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -121,5 +129,25 @@ Runs tests for Solve\+Square.
 
 Creates local array with tests, reads tests from tests/ss\+\_\+tests.\+txt and adds them to array.~\newline
 After runs all tests from that array and prints result. \begin{DoxyReturn}{Returns}
+Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}
+\Hypertarget{_s_s___tester_8h_ae0f518da5f19ef0e514a495155a3729d}\index{SS\_Tester.h@{SS\_Tester.h}!testsAllocateMore@{testsAllocateMore}}
+\index{testsAllocateMore@{testsAllocateMore}!SS\_Tester.h@{SS\_Tester.h}}
+\doxysubsubsection{\texorpdfstring{testsAllocateMore()}{testsAllocateMore()}}
+{\footnotesize\ttfamily \label{_s_s___tester_8h_ae0f518da5f19ef0e514a495155a3729d} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} tests\+Allocate\+More (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}} \texorpdfstring{$\ast$}{*}}]{ss\+\_\+tests}{, }\item[{int}]{chunk\+\_\+size}{}\end{DoxyParamCaption})}
+
+
+
+Allocate more memory for tests. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ss\+\_\+tests} & pointer to sturucte with tests \\
+\hline
+\mbox{\texttt{ in}}  & {\em chunck\+\_\+size} & size of memory that will be additionally allocated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
 Erorr code (if ok return Return\+Code\+::\+OK) 
 \end{DoxyReturn}
