@@ -34,6 +34,8 @@ ReturnCode ss_run_tests() {
 
   printf("%d of %d tests are passed\n", passed_tests_amount, ss_tests.amount);
 
+  freeTests(&ss_tests);
+
   return OK;
 }
 
@@ -171,6 +173,17 @@ ReturnCode testsAllocateMore(SS_Tests *ss_tests, int chunk_size) {
     ss_tests->tests = (SqEquation *)calloc(ss_tests->buf_size, sizeof(SqEquation));
   else
      ss_tests->tests = (SqEquation *)realloc(ss_tests->tests, ss_tests->buf_size);
+
+  return OK;
+}
+
+/**
+ * Calls free() for array with tests
+ * @param[in] ss_tests pointer to sturcture with tests
+ * @return Erorr code (if ok return ReturnCode::OK)
+ */
+ReturnCode freeTests(SS_Tests *ss_tests) {
+  free(ss_tests->tests);
 
   return OK;
 }

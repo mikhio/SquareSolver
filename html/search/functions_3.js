@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['handleprogramargs_0',['handleProgramArgs',['../_cli_args_handler_8h.html#ad17cd87dcaec01188f2e91aa4a6c5baa',1,'CliArgsHandler.cpp']]]
+  ['freetests_0',['freeTests',['../_s_s___tester_8h.html#a5f90b04aeaab07889b05e29e43684307',1,'SS_Tester.cpp']]]
 ];

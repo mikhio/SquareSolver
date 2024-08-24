@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isequal_0',['isEqual',['../_sq_equation_8h.html#ad4a57a5b4ab117f68dd9ff9d017d8b4d',1,'SqEquation.cpp']]]
+  ['handleprogramargs_0',['handleProgramArgs',['../_cli_args_handler_8h.html#ad17cd87dcaec01188f2e91aa4a6c5baa',1,'CliArgsHandler.cpp']]]
 ];

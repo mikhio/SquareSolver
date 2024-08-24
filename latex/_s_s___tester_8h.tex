@@ -17,11 +17,13 @@ struct \mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}}
 \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_a9523b5550504169d28597a18eddfbc05}{read\+Tests}} (const char \texorpdfstring{$\ast$}{*}file\+\_\+path, \mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}} \texorpdfstring{$\ast$}{*}ss\+\_\+tests)
 \begin{DoxyCompactList}\small\item\em Reads tests from file. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_ad8a0d996513fe12f1ee83e3f6469f544}{add\+Test}} (const \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}eq, \mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}} \texorpdfstring{$\ast$}{*}ss\+\_\+tests)
-\begin{DoxyCompactList}\small\item\em Add test to array with tests. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds test to array with tests. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_abc0a810530cf29130b9a25a089de11b8}{parse\+Eq\+Type}} (char \texorpdfstring{$\ast$}{*}type\+\_\+str, \mbox{\hyperlink{struct_sq_equation}{Sq\+Equation}} \texorpdfstring{$\ast$}{*}eq)
 \begin{DoxyCompactList}\small\item\em Parses equation type in file with tests. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_a5f90b04aeaab07889b05e29e43684307}{free\+Tests}} (\mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}} \texorpdfstring{$\ast$}{*}ss\+\_\+tests)
+\begin{DoxyCompactList}\small\item\em Frees allocated memory for array. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} \mbox{\hyperlink{_s_s___tester_8h_ae0f518da5f19ef0e514a495155a3729d}{tests\+Allocate\+More}} (\mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}} \texorpdfstring{$\ast$}{*}ss\+\_\+tests, int chunk\+\_\+size)
-\begin{DoxyCompactList}\small\item\em Allocate more memory for tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Allocates more memory for tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,13 +44,31 @@ const char \texorpdfstring{$\ast$}{*} {\bfseries TESTS\+\_\+\+FILE\+\_\+\+PATH} 
 
 
 
-Add test to array with tests. 
+Adds test to array with tests. 
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em eq} & const pointer to test\textquotesingle{}s equation that add \\
 \hline
 \mbox{\texttt{ out}}  & {\em ss\+\_\+tests} & pointer to structure with tests \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Erorr code (if ok return Return\+Code\+::\+OK) 
+\end{DoxyReturn}
+\Hypertarget{_s_s___tester_8h_a5f90b04aeaab07889b05e29e43684307}\index{SS\_Tester.h@{SS\_Tester.h}!freeTests@{freeTests}}
+\index{freeTests@{freeTests}!SS\_Tester.h@{SS\_Tester.h}}
+\doxysubsubsection{\texorpdfstring{freeTests()}{freeTests()}}
+{\footnotesize\ttfamily \label{_s_s___tester_8h_a5f90b04aeaab07889b05e29e43684307} 
+\mbox{\hyperlink{_return_codes_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}} free\+Tests (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_s___tests}{SS\+\_\+\+Tests}} \texorpdfstring{$\ast$}{*}}]{ss\+\_\+tests}{}\end{DoxyParamCaption})}
+
+
+
+Frees allocated memory for array. 
+
+Calls free() for array with tests 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ss\+\_\+tests} & pointer to sturcture with tests \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -139,7 +159,7 @@ Erorr code (if ok return Return\+Code\+::\+OK)
 
 
 
-Allocate more memory for tests. 
+Allocates more memory for tests. 
 
 
 \begin{DoxyParams}[1]{Parameters}
