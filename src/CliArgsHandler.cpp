@@ -5,6 +5,7 @@
 #include "../inc/CliInterface.h"
 #include "../inc/IoTool.h"
 
+
 /**
  * Set interface mode and print help info
  * @param[out] ci   pointer to interface

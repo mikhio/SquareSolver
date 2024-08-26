@@ -24,7 +24,7 @@ ReturnCode ss_ci_run(const CliInterface *ci) {
     case ONCE_WITHOUT_ATTEMPTS:
       return ss_run_once(ci, 0);
     case SELF_TESTING:
-      return ss_run_tests();
+      return ss_run_tests("tests/ss_tests2.txt");
     default:
       fprintf(stderr, RED("ERROR") ": Uknonw type of CliInterface");
       return ERR_UNKNOWN_CI_TYPE;

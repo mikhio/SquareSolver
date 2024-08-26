@@ -107,9 +107,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9afd592958821de2ffc48ee920419bf3" id="r_a9afd592958821de2ffc48ee920419bf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9afd592958821de2ffc48ee920419bf3">ss_run_tests</a> ()</td></tr>
-<tr class="memdesc:a9afd592958821de2ffc48ee920419bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs tests for SolveSquare.  <br /></td></tr>
-<tr class="separator:a9afd592958821de2ffc48ee920419bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5905125d0696b4b829048fd5ed37373e" id="r_a5905125d0696b4b829048fd5ed37373e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5905125d0696b4b829048fd5ed37373e">ss_run_tests</a> (const char *file_path)</td></tr>
+<tr class="memdesc:a5905125d0696b4b829048fd5ed37373e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs tests for SolveSquare.  <br /></td></tr>
+<tr class="separator:a5905125d0696b4b829048fd5ed37373e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eb5334c19b642df0969a915d164734e" id="r_a2eb5334c19b642df0969a915d164734e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2eb5334c19b642df0969a915d164734e">ss_run_test</a> (int test_index, <a class="el" href="struct_sq_equation.html">SqEquation</a> *test_eq, <a class="el" href="struct_s_s___tests.html">SS_Tests</a> *ss_tests)</td></tr>
 <tr class="memdesc:a2eb5334c19b642df0969a915d164734e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs one test for SolveSquare.  <br /></td></tr>
 <tr class="separator:a2eb5334c19b642df0969a915d164734e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,10 +135,6 @@ Variables</h2></td></tr>
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_CHUNK_SIZE</b> = 100</td></tr>
 <tr class="memdesc:a0ddfb36877c6db46dac15547c194385a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of tests that will be allocated after overflowed. <br /></td></tr>
 <tr class="separator:a0ddfb36877c6db46dac15547c194385a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab98d90341c43c6446bfafac6991d11fc" id="r_ab98d90341c43c6446bfafac6991d11fc"><td class="memItemLeft" align="right" valign="top"><a id="ab98d90341c43c6446bfafac6991d11fc" name="ab98d90341c43c6446bfafac6991d11fc"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_FILE_PATH</b> = &quot;tests/ss_tests2.txt&quot;</td></tr>
-<tr class="memdesc:ab98d90341c43c6446bfafac6991d11fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to file with tests. <br /></td></tr>
-<tr class="separator:ab98d90341c43c6446bfafac6991d11fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ad8a0d996513fe12f1ee83e3f6469f544" name="ad8a0d996513fe12f1ee83e3f6469f544"></a>
@@ -298,8 +294,8 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_FILE_PA
 
 </div>
 </div>
-<a id="a9afd592958821de2ffc48ee920419bf3" name="a9afd592958821de2ffc48ee920419bf3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9afd592958821de2ffc48ee920419bf3">&#9670;&#160;</a></span>ss_run_tests()</h2>
+<a id="a5905125d0696b4b829048fd5ed37373e" name="a5905125d0696b4b829048fd5ed37373e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5905125d0696b4b829048fd5ed37373e">&#9670;&#160;</a></span>ss_run_tests()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,7 +303,7 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_FILE_PA
         <tr>
           <td class="memname"><a class="el" href="_return_codes_8h.html#a5a2236a3693e3930b2c9fbe1fe7144ec">ReturnCode</a> ss_run_tests </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>file_path</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -315,7 +311,13 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>TESTS_FILE_PA
 
 <p>Runs tests for SolveSquare. </p>
 <p>Creates local array with tests, reads tests from tests/ss_tests.txt and adds them to array.<br  />
-After runs all tests from that array and prints result. </p><dl class="section return"><dt>Returns</dt><dd>Erorr code (if ok return ReturnCode::OK) </dd></dl>
+After runs all tests from that array and prints result. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file_path</td><td>path to file with tests </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Erorr code (if ok return ReturnCode::OK) </dd></dl>
 
 </div>
 </div>

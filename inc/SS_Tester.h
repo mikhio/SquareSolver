@@ -7,7 +7,6 @@
 #include "../inc/ReturnCodes.h"
 
 const int   TESTS_CHUNK_SIZE = 100;                 ///< Size of tests that will be allocated after overflowed
-const char *TESTS_FILE_PATH = "tests/ss_tests2.txt"; ///< Path to file with tests
 
 /// @struct SS_Tests
 /**
@@ -20,7 +19,7 @@ struct SS_Tests {
   SqEquation *tests; ///< Array with tests
 };
 
-ReturnCode ss_run_tests (); ///< Runs tests for SolveSquare
+ReturnCode ss_run_tests (const char *file_path); ///< Runs tests for SolveSquare
 ReturnCode ss_run_test  (int test_index, SqEquation *test_eq, SS_Tests *ss_tests); ///< Runs one test for SolveSquare
 
 ReturnCode readTests   (const char *file_path, SS_Tests *ss_tests); ///< Reads tests from file

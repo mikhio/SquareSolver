@@ -10,13 +10,15 @@
 /**
  * Creates local array with tests, reads tests from tests/ss_tests.txt and adds them to array.\n
  * After runs all tests from that array and prints result.
+ * @param[in] file_path path to file with tests
  * @return Erorr code (if ok return ReturnCode::OK)
  */
-ReturnCode ss_run_tests() {
-  printf("Run %s:\n", TESTS_FILE_PATH);
+ReturnCode ss_run_tests(const char *file_path) {
+  SS_ASSERT(file_path);
+  printf("Run %s:\n", file_path);
   SS_Tests ss_tests = {};
 
-  readTests(TESTS_FILE_PATH, &ss_tests);
+  readTests(file_path, &ss_tests);
 
   SqEquation eq = {};
 
@@ -100,9 +102,13 @@ ReturnCode readTests(const char *file_path, SS_Tests *ss_tests) {
   char  *read_line = NULL;
   size_t line_len  = 0;
 
+  int line_num = 0;
+
   int is_started = 0;
 
   while (getline(&read_line, &line_len, tests_file) != EOF) {
+    line_num++;
+
     if (strcmp(read_line, "#START\n") == 0) {
       is_started = 1;
     } else if (strcmp(read_line, "#END\n") == 0) {
@@ -119,9 +125,11 @@ ReturnCode readTests(const char *file_path, SS_Tests *ss_tests) {
         if (addTest(&eq, ss_tests) != OK)
           fprintf(stderr, "Can't add test: tests' buffer are overflowed\n");
       } else {
+        read_line[strlen(read_line) - 1] = '\0';
+
         fprintf(stderr, 
-            MAGENTA("Warning:") " Can't read test line in %s: '%s'",
-            file_path, read_line
+            MAGENTA("Warning:") " Can't read test " BLACK("line %d") " in %s: '%s'\n",
+            line_num, file_path, read_line
         );
       }
     }
@@ -183,6 +191,7 @@ ReturnCode testsAllocateMore(SS_Tests *ss_tests, int chunk_size) {
  * @return Erorr code (if ok return ReturnCode::OK)
  */
 ReturnCode freeTests(SS_Tests *ss_tests) {
+  SS_ASSERT(ss_tests);
   free(ss_tests->tests);
 
   return OK;
