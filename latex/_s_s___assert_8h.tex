@@ -1,5 +1,7 @@
 \doxysection{inc/\+SS\+\_\+\+Assert.h File Reference}
 \hypertarget{_s_s___assert_8h}{}\label{_s_s___assert_8h}\index{inc/SS\_Assert.h@{inc/SS\_Assert.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -8,7 +10,7 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{_s_s___assert_8h_ab35ab285a4a2f3f6949b78dc12956ccf}{ss\+\_\+assert\+\_\+func}} (int x, const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+expr, const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+file, unsigned int \+\_\+\+\_\+line, const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+function)
+void \mbox{\hyperlink{_s_s___assert_8h_a3623df6aeb7f671379f420aed4d18bea}{ss\+\_\+assert\+\_\+func}} (int x, const char \texorpdfstring{$\ast$}{*}expr, const char \texorpdfstring{$\ast$}{*}file, unsigned int line, const char \texorpdfstring{$\ast$}{*}function)
 \begin{DoxyCompactList}\small\item\em My assert function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -21,7 +23,9 @@ void \mbox{\hyperlink{_s_s___assert_8h_ab35ab285a4a2f3f6949b78dc12956ccf}{ss\+\_
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{_s_s___assert_8h_ab35ab285a4a2f3f6949b78dc12956ccf}{ss\_assert\_func}}(\ x\ ?\ 0\ :\ 1,\ \#x,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_PRETTY\_FUNCTION\_\_);}
+\DoxyCodeLine{\ \ \{\(\backslash\)}
+\DoxyCodeLine{\ \ ss\_assert\_func(\ x\ ?\ 0\ :\ 1,\ \#x,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_PRETTY\_FUNCTION\_\_);\(\backslash\)}
+\DoxyCodeLine{\}}
 
 \end{DoxyCode}
 
@@ -31,11 +35,11 @@ Calling assert macros.
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{_s_s___assert_8h_ab35ab285a4a2f3f6949b78dc12956ccf}\index{SS\_Assert.h@{SS\_Assert.h}!ss\_assert\_func@{ss\_assert\_func}}
+\Hypertarget{_s_s___assert_8h_a3623df6aeb7f671379f420aed4d18bea}\index{SS\_Assert.h@{SS\_Assert.h}!ss\_assert\_func@{ss\_assert\_func}}
 \index{ss\_assert\_func@{ss\_assert\_func}!SS\_Assert.h@{SS\_Assert.h}}
 \doxysubsubsection{\texorpdfstring{ss\_assert\_func()}{ss\_assert\_func()}}
-{\footnotesize\ttfamily \label{_s_s___assert_8h_ab35ab285a4a2f3f6949b78dc12956ccf} 
-void ss\+\_\+assert\+\_\+func (\begin{DoxyParamCaption}\item[{int}]{flag}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{\+\_\+\+\_\+expr}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{\+\_\+\+\_\+file}{, }\item[{unsigned int}]{\+\_\+\+\_\+line}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{\+\_\+\+\_\+function}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{_s_s___assert_8h_a3623df6aeb7f671379f420aed4d18bea} 
+void ss\+\_\+assert\+\_\+func (\begin{DoxyParamCaption}\item[{int}]{flag}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{expr}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{file}{, }\item[{unsigned int}]{line}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{}\end{DoxyParamCaption})}
 
 
 
@@ -45,10 +49,10 @@ Printf error and call exit(1)
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em flag} & if flag is 1 then make assert \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+\+\_\+expr} & string with checking expression \\
+\mbox{\texttt{ in}}  & {\em expr} & string with checking expression \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+\+\_\+line} & number of expression line \\
+\mbox{\texttt{ in}}  & {\em line} & number of expression line \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+\+\_\+function} & name of function with expression \\
+\mbox{\texttt{ in}}  & {\em function} & name of function with expression \\
 \hline
 \end{DoxyParams}

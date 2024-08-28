@@ -86,7 +86,7 @@ ReturnCode ss_run_test(int test_index, SqEquation *test_eq, SS_Tests *ss_tests) 
 }
 
 /**
- * Fill array with data from file
+ * Filling array with data from file by chucks and dynamically allocating more memory for it.
  * @param[in]  file_path path to file 
  * @param[out] ss_tests  pointer to sturcture with tests
  * @return Erorr code (if ok return ReturnCode::OK)
@@ -149,7 +149,7 @@ ReturnCode addTest(const SqEquation *eq, SS_Tests *ss_tests) {
 
   if (ss_tests->amount <= ss_tests->buf_size) {
     if (testsAllocateMore(ss_tests, TESTS_CHUNK_SIZE) != OK)
-      return ERR_TESTS_ALLOCATION;
+      return ERR_CANT_ALLOCATE;
   }
 
   SqEquation *cur_test = &(ss_tests->tests[ss_tests->amount]);
@@ -177,10 +177,24 @@ ReturnCode testsAllocateMore(SS_Tests *ss_tests, int chunk_size) {
   
   ss_tests->buf_size += chunk_size;
 
-  if (ss_tests->tests == NULL)
-    ss_tests->tests = (SqEquation *)calloc(ss_tests->buf_size, sizeof(SqEquation));
-  else
-     ss_tests->tests = (SqEquation *)realloc(ss_tests->tests, ss_tests->buf_size);
+  if (ss_tests->tests == NULL) {
+    SqEquation *temp_ptr = (SqEquation *)calloc(ss_tests->buf_size, sizeof(SqEquation));
+
+    if (temp_ptr == NULL)
+      return ERR_CANT_ALLOCATE;
+
+    ss_tests->tests = temp_ptr;
+
+  } else {
+    SqEquation *temp_ptr = (SqEquation *)realloc(ss_tests->tests, ss_tests->buf_size * sizeof(SqEquation));
+
+    if (temp_ptr == NULL)
+      return ERR_CANT_ALLOCATE;
+
+    memset(temp_ptr + ss_tests->buf_size - chunk_size, 0, chunk_size * sizeof(SqEquation));
+
+    ss_tests->tests = temp_ptr;
+  }
 
   return OK;
 }
@@ -192,7 +206,9 @@ ReturnCode testsAllocateMore(SS_Tests *ss_tests, int chunk_size) {
  */
 ReturnCode freeTests(SS_Tests *ss_tests) {
   SS_ASSERT(ss_tests);
+
   free(ss_tests->tests);
+  ss_tests->tests = NULL;
 
   return OK;
 }

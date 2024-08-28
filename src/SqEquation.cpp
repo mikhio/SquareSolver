@@ -16,7 +16,6 @@
 ReturnCode calcDiscriminant(SqEquation *eq) {
   SS_ASSERT(eq);
 
-
   if (eq->type == SQUARE) {
     eq->D = eq->b*eq->b - 4*eq->a*eq->c;
     

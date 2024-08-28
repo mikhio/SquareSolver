@@ -14,7 +14,7 @@ enum ReturnCode {
   ERR_UNKNOWN_ARG      = 7,  ///< Unknonw cli flag or argument
   ERR_TEST_WRONG       = 8,  ///< Test wasn't passed
   ERR_OPEN_FILE        = 9,  ///< Can't open file
-  ERR_TESTS_ALLOCATION = 10, ///< Can't allocate tests array
+  ERR_CANT_ALLOCATE    = 10, ///< Can't allocate tests array
 };
 
 #endif // RETURN_CODE_H

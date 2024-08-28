@@ -24,7 +24,7 @@ CXX_FLAGS := -D _DEBUG -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ -Waggressive
 # Compiling and linking
 $(APP_PATH): $(OBJECTS) 
 	@mkdir -p $(@D)
-	$(CXX) $(CXX_FLAGS) $^ -o build/SquareSolver
+	$(CXX) $(CXX_FLAGS) $^ -o $(APP_PATH)
 
 $(CCH_PATH)/$(SRC_PATH)/%.o: $(SRC_PATH)/%.cpp Makefile
 	@mkdir -p $(@D)

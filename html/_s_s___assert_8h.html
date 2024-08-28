@@ -94,7 +94,9 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">SS_Assert.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
+</div>
 <p><a href="_s_s___assert_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -105,9 +107,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab35ab285a4a2f3f6949b78dc12956ccf" id="r_ab35ab285a4a2f3f6949b78dc12956ccf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab35ab285a4a2f3f6949b78dc12956ccf">ss_assert_func</a> (int x, const char *__expr, const char *__file, unsigned int __line, const char *__function)</td></tr>
-<tr class="memdesc:ab35ab285a4a2f3f6949b78dc12956ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">My assert function.  <br /></td></tr>
-<tr class="separator:ab35ab285a4a2f3f6949b78dc12956ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3623df6aeb7f671379f420aed4d18bea" id="r_a3623df6aeb7f671379f420aed4d18bea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3623df6aeb7f671379f420aed4d18bea">ss_assert_func</a> (int x, const char *expr, const char *file, unsigned int line, const char *function)</td></tr>
+<tr class="memdesc:a3623df6aeb7f671379f420aed4d18bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">My assert function.  <br /></td></tr>
+<tr class="separator:a3623df6aeb7f671379f420aed4d18bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a406315db0e5ba6f3a5e069960f6769ba" name="a406315db0e5ba6f3a5e069960f6769ba"></a>
@@ -124,16 +126,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#ab35ab285a4a2f3f6949b78dc12956ccf">ss_assert_func</a>( x ? 0 : 1, #x, __FILE__, __LINE__, __PRETTY_FUNCTION__);</div>
-<div class="ttc" id="a_s_s___assert_8h_html_ab35ab285a4a2f3f6949b78dc12956ccf"><div class="ttname"><a href="#ab35ab285a4a2f3f6949b78dc12956ccf">ss_assert_func</a></div><div class="ttdeci">void ss_assert_func(int x, const char *__expr, const char *__file, unsigned int __line, const char *__function)</div><div class="ttdoc">My assert function.</div><div class="ttdef"><b>Definition</b> SS_Assert.cpp:13</div></div>
+<b>Value:</b><div class="fragment"><div class="line">  {\</div>
+<div class="line">  ss_assert_func( x ? 0 : 1, #x, __FILE__, __LINE__, __PRETTY_FUNCTION__);\</div>
+<div class="line">}</div>
 </div><!-- fragment -->
 <p>Calling assert macros. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab35ab285a4a2f3f6949b78dc12956ccf" name="ab35ab285a4a2f3f6949b78dc12956ccf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab35ab285a4a2f3f6949b78dc12956ccf">&#9670;&#160;</a></span>ss_assert_func()</h2>
+<a id="a3623df6aeb7f671379f420aed4d18bea" name="a3623df6aeb7f671379f420aed4d18bea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3623df6aeb7f671379f420aed4d18bea">&#9670;&#160;</a></span>ss_assert_func()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,22 +149,22 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>__expr</em></span>, </td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>expr</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>__file</em></span>, </td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>__line</em></span>, </td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>line</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>__function</em></span>&#160;)</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>function</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -170,9 +173,9 @@ Functions</h2></td></tr>
 <p>Printf error and call exit(1) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">flag</td><td>if flag is 1 then make assert </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">__expr</td><td>string with checking expression </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">__line</td><td>number of expression line </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">__function</td><td>name of function with expression </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">expr</td><td>string with checking expression </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">line</td><td>number of expression line </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">function</td><td>name of function with expression </td></tr>
   </table>
   </dd>
 </dl>
